@@ -1,4 +1,4 @@
-{% load static %}
+{% load sass_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'demo.sass' %}" />
 </head>
 <body>
     {% include "./navigation.html" %}
-    {% block content %}
-    {% endblock content %}
+        <div class="wrapper">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        <div class="push"></div>
+    {% include "./footer.html" %}
 </body>
 </html>

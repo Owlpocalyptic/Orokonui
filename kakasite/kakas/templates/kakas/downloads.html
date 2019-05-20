@@ -1,5 +1,13 @@
 {% extends "./base.html" %}
-
+{% load static %}
 {% block content %}
-Here's a picture of a kaka you can have.
+<div class="panel">
+    <img src="{% static 'img/kaka-1.jpg' %}" />
+    <p class="img-caption">Here's a picture of a kākā you can have.</p>
+</div>
+
+<div class="panel">
+<img src="{% static 'img/kaka-family.jpg' %}" />
+<p class="img-caption">These are two kākās being jolly birdos.</p>
+</div>
 {% endblock content %}

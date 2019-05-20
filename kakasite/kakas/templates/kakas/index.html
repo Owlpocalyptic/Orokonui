@@ -1,5 +1,8 @@
 {% extends "./base.html" %}
+{% load static %}
 
 {% block content %}
-Kakas are beautiful birds!
+<div class="panel">
+        <img src="{% static 'img/kaka-game.png' %}" />
+    </div>
 {% endblock content %}

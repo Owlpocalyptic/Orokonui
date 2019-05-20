@@ -1,0 +1,78 @@
+$font-stack:    Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+$bgcolor: #333
+$navcolor: #222
+$fgcolor: #111
+$textbody: #fff
+$thinpadding: 10px
+$footer-size: 180px
+
+html
+    background-color: $bgcolor
+    font: 100% $font-stack
+    overflow-y: scroll
+
+body
+    margin: auto
+    width: 80%
+    background-color: $fgcolor
+    color: $textbody
+
+.wrapper
+    min-height: calc(100vh - 302px)
+
+.wrapper > p
+    margin: 20px 20px
+
+.panel
+    margin-bottom: 40px
+
+.panel > img
+    max-width: calc(100% - 40px)
+    margin: auto
+    margin-top: 20px
+    display: block
+
+.img-caption
+    text-align: center
+    font-style: italic
+
+.push
+    height: $footer-size
+
+
+.nav-container
+    display: table
+    width: 100%
+    border-collapse: collapse
+
+.navbar
+    background-color: $navcolor
+    display:table-row
+    border-collapse:collapse
+    padding: $thinpadding
+
+.navbar > *
+    padding: 5px 0px
+    width: 24%
+    display: inline-block
+    text-align: center
+    vertical-align: middle
+
+.navbar > a
+    color: #fcfce3
+    text-decoration: none
+
+.navbar > a:hover
+    color: #fcbc00
+
+.footer-container
+    display: table
+    width: 100%
+    border-collapse: collapse
+    flex-shrink: 0;
+    background-color: $navcolor
+
+.footer-bar
+    display:table-row
+    width: 100%
+    text-align: center
