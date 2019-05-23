@@ -1,8 +1,57 @@
 {% extends "./base.html" %}
 {% load static %}
-
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 {% block content %}
 <div class="panel">
-        <img src="{% static 'img/kaka-game.png' %}" />
+        <img src="{% static 'img/kaka-game.png' %}" style="cursor:pointer" id="game-panel" />
+        <div class="choice-block">
+            <div id="prompt"></div>
+            <div class="choice hidden" id="choice1">Choice 1</div>
+            <div class="choice hidden" id="choice2">Choice 2</div>
+            <div class="choice hidden" id="choice3">Choice 3</div>
+            <div class="choice hidden" id="choice1">Choice 4</div>
+        </div>
     </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    const populate = (imgsrc, prompt, choices, choicehandlers) => {
+        let $prompt = $("#prompt");
+        $("#game-panel").attr("src", imgsrc);
+        $prompt.text(prompt);
+        (prompt) ? $prompt.removeClass("hidden") : $prompt.addClass("hidden");
+        for (i = 0; i < 4; i++)
+            {
+                let $choicebox = $("#choice" + (i + 1));
+                $choicebox.addClass("hidden");
+            }
+        if (choices) {
+            for (i = 0; i < choices.length; i++)
+            {
+                let $choicebox = $("#choice" + (i + 1));
+                console.log($choicebox);
+                $choicebox.removeClass("hidden");
+                $choicebox.text(choices[i]);
+                if (choiceHandlers) {
+                    $choicebox.mousedown(choiceHandlers[i]);
+                }
+            }
+        }
+    }
+
+    let choiceHandlers1 = [
+            () => { populate("{% static 'img/kaka-family.jpg' %}", "You are now TWO BIRDS", ["omae wa mou shindeiru"]) }
+    ];
+
+    let gameStarted = false;
+    $("#game-panel").mousedown(() => {
+    if (!gameStarted) {
+        let choices = [ "Look around at the trees", "Look around at the animals" ];
+        let prompt = "You have no idea where to start";
+        let imgsrc = "{% static 'img/kaka-game1a.jpg' %}";
+        populate(imgsrc, prompt, choices, choiceHandlers1);
+        gameStarted = true;
+    }
+});
+</script>
+
 {% endblock content %}

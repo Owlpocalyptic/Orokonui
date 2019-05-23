@@ -2,6 +2,8 @@ $font-stack:    Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 $bgcolor: #333
 $navcolor: #222
 $fgcolor: #111
+$choicecolor: #39c8ef
+$choicecolor-hover: #39ef51
 $textbody: #fff
 $thinpadding: 10px
 $footer-size: 180px
@@ -76,3 +78,31 @@ body
     display:table-row
     width: 100%
     text-align: center
+
+.choice-block
+    width: 40%
+    margin: auto
+    margin-top: 10px
+
+.choice
+    background-color: $choicecolor
+    text-align: center
+    padding: 20px
+    margin-bottom: 3px
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer
+
+.choice:hover
+    background-color: $choicecolor-hover
+
+.hidden
+    display: none
+
+#prompt
+    text-align: center
+    margin-bottom: 8px
+    cursor: default
