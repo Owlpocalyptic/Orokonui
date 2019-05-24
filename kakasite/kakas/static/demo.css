@@ -94,9 +94,11 @@ body {
 .restart:hover {
   background-color: #efc839; }
 
+#game-panel {
+  min-height: 300px; }
+
 #prompt {
-  text-align: center;
-  margin-bottom: 8px;
+  margin: 18px 22px;
   cursor: default; }
 
 /*# sourceMappingURL=demo.css.map */

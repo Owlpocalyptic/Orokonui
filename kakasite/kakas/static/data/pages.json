@@ -2,19 +2,37 @@
     "pages":{
         "1a" : {
             "choices": [ "Look around at the trees", "Look around at the animals" ],
-            "prompt" : "You have no idea where to start.",
+            "prompt" : "You gaze out at your patch of farmland. It is beautiful, full of potential, but there are no birds in sight. You have always dreamed of having a farm and a garden full of native birds: bellbirds, fantails, wood pigeons, and the rare elusive kaka. But you have no idea where to start.",
             "choice-ids": [ "2a", "2b" ]
         },
         "2a" : {
-            "prompt" : "THE TREES HAVE KILLED YOU."
+            "choices" : [ "Invest in traps and weedkiller", "Invest in native seedlings"],
+            "prompt" : "Your property is surrounded by native bush. You look closer and see there are lots ofweeds and vines growing around the trees, and small tracks and footprints all around the trees.\n\nThere are also small fragments of bush on your property which don’t have as many weeds.",
+            "choice-ids" : ["3c", "3d"]
         },
         "2b" : {
-            "choices": [ "Demand to know why the cow is not a kākā." ],
+            "choices": [ "Demand to know why the cow is not a kākā.", "Build a fence" ],
             "prompt" : "The only animal on your farm is a cow.",
-            "choice-ids": [ "3a" ]
+            "choice-ids": [ "3a", "3b" ]
         },
         "3a" : {
             "prompt" : "In a fit of rage, the cow turns on you. You, and every last kākā that may have settled on your property, have perished."
+        },
+        "3b" : {
+            "choices" : [ "Invest in native seedlings" ],
+            "prompt" : "You build a fence around your cattle. They’re not very impressed by the restrictions on their grazing space, but at least this way they can’t trample any bush.",
+            "choice-ids" : [ "4a" ]
+        },
+        "3c" : {
+            "choices" : [ "Good stuff!" ],
+            "prompt" : "You go to the store and stock up on traps and weedkiller. While you’re there you also see lots of notices about controlling your pets and livestock. Once you get home you set up traps around the perimeter of your property and start attacking the weeds and vines choking the native trees.",
+            "choice-ids" : [ "4a" ]
+        },
+        "3d" : {
+            "prompt" : "You plant native tree seedlings and start planting them around the patches of bush in your property. Your cows trample over them and weeds choke them until they die. Back to square one."
+        },
+        "4a" : {
+            "prompt" : "You’ve been doing a lot of hard work, both getting your farm running and trying to make it a safe place for birds! But things seem to be working. You’re catching pests in your traps, you’re actively looking after the native forest, and starting to expand it with seedlings. This morning when you woke up, you heard loud birdsong. Things are going well!"
         }
     }
 }
