@@ -1,0 +1,20 @@
+{
+    "pages":{
+        "1a" : {
+            "choices": [ "Look around at the trees", "Look around at the animals" ],
+            "prompt" : "You have no idea where to start.",
+            "choice-ids": [ "2a", "2b" ]
+        },
+        "2a" : {
+            "prompt" : "THE TREES HAVE KILLED YOU."
+        },
+        "2b" : {
+            "choices": [ "Demand to know why the cow is not a kākā." ],
+            "prompt" : "The only animal on your farm is a cow.",
+            "choice-ids": [ "3a" ]
+        },
+        "3a" : {
+            "prompt" : "In a fit of rage, the cow turns on you. You, and every last kākā that may have settled on your property, have perished."
+        }
+    }
+}

@@ -10,46 +10,70 @@
             <div class="choice hidden" id="choice2">Choice 2</div>
             <div class="choice hidden" id="choice3">Choice 3</div>
             <div class="choice hidden" id="choice1">Choice 4</div>
+            <div class="choice hidden restart" id="restart">Try again!</div>
+            <div class="choice hidden restart" id="learn-more">Learn more about you can help protect kākā.</div>
         </div>
     </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-    const populate = (imgsrc, prompt, choices, choicehandlers) => {
+    const base_path = "{% static 'img/kaka-gameX.jpg' %}";
+
+    const src_json = "{% static 'data/pages.json' %}";
+
+    let pages;
+    
+    $.getJSON(src_json, (data) => {
+        pages = data["pages"];
+    }).done(() => {
+        console.log(pages["1a"]);
+        let gameStarted = false;
+        $("#game-panel").mousedown(() => {
+            if (!gameStarted) {
+                gameStarted = true;
+                populateFromJson("1a");
+            }
+        });
+        $("#restart").mousedown(() => {
+            populateFromJson("1a");
+            $(".restart").addClass("hidden");
+        });
+        $("#learn-more").mousedown(() => {
+            window.location.replace("{% url 'kakas:about' %}")
+            $(".restart").addClass("hidden");
+        });
+
+    const populateFromJson = (jsonObjectID) => {
+        let jsonObject = pages[jsonObjectID]
+        let imgsrc = base_path.replace('X', jsonObjectID);
+        populate(imgsrc, jsonObject["prompt"], jsonObject["choices"], jsonObject["choice-ids"]);
+    }
+
+    const populate = (imgsrc, prompt, choices, choice_ids) => {
         let $prompt = $("#prompt");
         $("#game-panel").attr("src", imgsrc);
         $prompt.text(prompt);
         (prompt) ? $prompt.removeClass("hidden") : $prompt.addClass("hidden");
-        for (i = 0; i < 4; i++)
+        for (let i = 0; i < 4; i++)
             {
                 let $choicebox = $("#choice" + (i + 1));
                 $choicebox.addClass("hidden");
             }
         if (choices) {
-            for (i = 0; i < choices.length; i++)
+            for (let i = 0; i < choices.length; i++)
             {
                 let $choicebox = $("#choice" + (i + 1));
                 console.log($choicebox);
                 $choicebox.removeClass("hidden");
                 $choicebox.text(choices[i]);
-                if (choiceHandlers) {
-                    $choicebox.mousedown(choiceHandlers[i]);
+                if (choice_ids) {
+                    $choicebox.mousedown(() => {
+                        populateFromJson(choice_ids[i].toString());
+                    });
                 }
             }
+        } else {
+            $(".restart").removeClass("hidden");
         }
-    }
-
-    let choiceHandlers1 = [
-            () => { populate("{% static 'img/kaka-family.jpg' %}", "You are now TWO BIRDS", ["omae wa mou shindeiru"]) }
-    ];
-
-    let gameStarted = false;
-    $("#game-panel").mousedown(() => {
-    if (!gameStarted) {
-        let choices = [ "Look around at the trees", "Look around at the animals" ];
-        let prompt = "You have no idea where to start";
-        let imgsrc = "{% static 'img/kaka-game1a.jpg' %}";
-        populate(imgsrc, prompt, choices, choiceHandlers1);
-        gameStarted = true;
     }
 });
 </script>
