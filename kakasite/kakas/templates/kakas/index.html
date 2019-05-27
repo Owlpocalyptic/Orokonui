@@ -34,7 +34,7 @@
             }
         });
         $("#restart").mousedown(() => {
-            populateFromJson("1a");
+            window.location.replace("{% url 'kakas:index' %}")
             $(".restart").addClass("hidden");
         });
         $("#learn-more").mousedown(() => {
@@ -46,6 +46,7 @@
         let jsonObject = pages[jsonObjectID]
         let imgsrc = base_path.replace('X', jsonObjectID);
         populate(imgsrc, jsonObject["prompt"], jsonObject["choices"], jsonObject["choice-ids"]);
+        console.log("populateFromJson triggered");
     }
 
     const populate = (imgsrc, prompt, choices, choice_ids) => {
@@ -54,15 +55,15 @@
         $prompt.text(prompt);
         (prompt) ? $prompt.removeClass("hidden") : $prompt.addClass("hidden");
         for (let i = 0; i < 4; i++)
-            {
-                let $choicebox = $("#choice" + (i + 1));
-                $choicebox.addClass("hidden");
-            }
+        {
+            let $choicebox = $("#choice" + (i + 1));
+            $choicebox.addClass("hidden");
+        }
+        console.log("Choices are " + choices);
         if (choices) {
             for (let i = 0; i < choices.length; i++)
             {
                 let $choicebox = $("#choice" + (i + 1));
-                console.log($choicebox);
                 $choicebox.removeClass("hidden");
                 $choicebox.text(choices[i]);
                 if (choice_ids) {
@@ -71,8 +72,10 @@
                     });
                 }
             }
+            $(".restart").addClass("hidden");
         } else {
             $(".restart").removeClass("hidden");
+            console.log("Unhiding the restart buttons!");
         }
     }
 });
