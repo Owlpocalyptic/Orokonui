@@ -101,4 +101,26 @@ body {
   margin: 18px 22px;
   cursor: default; }
 
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #f00;
+  position: absolute;
+  left: calc(50vw - $arrow-width);
+  display: none; }
+
+/* mobile formatting */
+@media (max-width: 668px) {
+  body {
+    width: 100%; }
+  .navbar > a {
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+  .arrow-down {
+    display: block; } }
+
 /*# sourceMappingURL=demo.css.map */

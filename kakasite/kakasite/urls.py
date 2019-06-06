@@ -19,6 +19,7 @@ from kakas import views
 
 app_name='kakas'
 urlpatterns = [
+    path('', include('pwa.urls')),
     path('kaka-quest/', include('kakas.urls')),
     path('admin/', admin.site.urls),
 ]

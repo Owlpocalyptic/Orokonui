@@ -12,6 +12,7 @@ libsass = "*"
 django-compressor = "*"
 django-sass-processor = "*"
 closure = "*"
+django-progressive-web-app = "*"
 
 [requires]
 python_version = "3.7"

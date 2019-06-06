@@ -117,3 +117,34 @@ body
 #prompt
     margin: 18px 22px
     cursor: default
+
+$arrow-width: 20px
+$arrow-height: 20px
+
+.arrow-down
+    width: 0
+    height: 0
+    border-left: $arrow-width solid transparent
+    border-right: $arrow-width solid transparent
+    border-top: $arrow-height solid #f00
+    position: absolute
+    left: calc(50vw - $arrow-width)
+    display: none
+
+
+/* mobile formatting */
+$phone-breakpoint: 668px
+$phone-nav-height: 20px
+
+@media (max-width: $phone-breakpoint)
+    body
+        width: 100%
+
+    .navbar > a
+        display: block
+        width: 100%
+        padding-top: $phone-nav-height
+        padding-bottom: $phone-nav-height
+
+    .arrow-down
+        display: block
