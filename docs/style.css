@@ -1,0 +1,221 @@
+html,
+body
+{
+    background-color:#acd;
+    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+a
+{
+    text-decoration:none;
+    color: #885A8B;
+}
+
+.title > a > h2
+{
+    margin:0px;
+    font-size:2.4em;
+}
+.title > a > h3
+{
+    margin:0px;
+    color:#888;
+}
+
+.title > a:hover > h2
+{
+    color:#551A8B;
+}
+.title > a:hover > h3
+{
+    color:#555;
+}
+
+.title
+{
+    margin:auto;
+    margin-top:50px;
+    text-align:center;
+    width:500px;
+    padding:30px 10px;
+    background-color:#fff;
+    border-radius:10px;
+}
+
+
+.body
+{
+    background-color: white;
+    margin:auto;
+    margin-top:30px;
+	margin-bottom: 80px;
+    width:840px;
+    padding:10px 70px;
+    border-radius:10px;
+}
+
+.body.final
+{
+    width:880px;
+}
+
+
+h3
+{
+	margin-top:30px;
+	margin-bottom:0px;
+}
+
+table
+{
+	margin-top:20px;
+	margin-bottom:30px;
+	border-spacing:10px 20px;
+}
+
+th
+{
+	width:180px;
+}
+
+td
+{
+	font-style:italic;
+}
+
+.subtitle
+{
+	margin-top:-15px;
+	color:#777;
+}
+
+.caption
+{
+    text-align:center;
+    margin:auto;
+    margin-bottom:20px;
+    padding:10px;
+    max-width:650px;
+}
+
+.imgwrapper
+{
+	margin-top:0px;
+}
+
+img
+{
+	max-width:700px;
+	margin:auto;
+	display:block;
+	border:solid black;
+}
+
+iframe
+{
+	max-width:800px;
+	margin:auto;
+	display:block;
+}
+
+.section
+{
+	margin:30px 0px;
+	padding:30px 0px;
+}
+
+.imgrowwrapper
+{
+	display:table;
+	margin:auto;
+	border-spacing:3px;
+	margin-top:20px;
+}
+
+.imgrow
+{
+	display:table-row;
+}
+
+.imgrow > a
+{
+	display:table-cell;
+}
+
+.imgrow > a > img
+{
+	max-width: 140px;
+	border:solid black 2px;
+}
+
+.imgrow.three > a > img
+{
+	max-width:100%;
+	max-height:150px;
+}
+
+.imgrow.two > a > img
+{
+	max-width:100%;
+	max-height:200px;
+}
+
+.script > h2
+{
+	background-color:#ccc;
+	padding-left:3px;
+}
+
+iframe
+{
+    border-style:solid;
+    border-width:3px;
+}
+
+.label
+{
+	display:inline-block;
+	padding:3px 10px;
+	margin:0px -30px 0px 40px;
+	border-radius:6px;
+	color:white;
+	min-width:80px;
+	text-align:center;
+}
+
+.technical
+{
+	background-color:#df7512;
+}
+
+.professional
+{
+	background-color:#1275df;
+}
+
+ul
+{
+	list-style:none;
+	display:table;
+	border-spacing:14px;
+}
+
+ul > li
+{
+	display:table-row;
+}
+
+ul > li > *
+{
+	display:table-cell;
+}
+
+.label + a
+{
+	float:right;
+}
+
+h3
+{
+	display:inline;
+}
