@@ -3,6 +3,7 @@ body
 {
     background-color:#acd;
     font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    cursor: default
 }
 
 a
@@ -64,6 +65,11 @@ h3
 {
 	margin-top:30px;
 	margin-bottom:0px;
+}
+
+h5
+{
+
 }
 
 table
@@ -180,7 +186,11 @@ iframe
 	border-radius:6px;
 	color:white;
 	min-width:80px;
-	text-align:center;
+    text-align:center;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .technical
@@ -191,6 +201,21 @@ iframe
 .professional
 {
 	background-color:#1275df;
+}
+
+.empty
+{
+    background-color: white;
+}
+
+.design
+{
+    background-color: #12df75
+}
+
+.community
+{
+    background-color: #7575df
 }
 
 ul
@@ -215,7 +240,31 @@ ul > li > *
 	float:right;
 }
 
+.imgwrapper + .imgwrapper
+{
+    margin-top:15px;
+}
+
+.label.date
+{
+    color: black
+}
+
 h3
 {
 	display:inline;
+}
+
+code
+{
+    color:blue;
+}
+.indented
+{
+    margin-left:30px;
+}
+
+sup
+{
+    font-size:60%;
 }
