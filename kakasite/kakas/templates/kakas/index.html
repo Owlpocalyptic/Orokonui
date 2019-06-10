@@ -25,7 +25,6 @@
     $.getJSON(src_json, (data) => {
         pages = data["pages"];
     }).done(() => {
-        console.log(pages["1a"]);
         let gameStarted = false;
         $("#game-panel").mousedown(() => {
             if (!gameStarted) {
@@ -46,7 +45,6 @@
         let jsonObject = pages[jsonObjectID]
         let imgsrc = base_path.replace('X', jsonObjectID);
         populate(imgsrc, jsonObject["prompt"], jsonObject["choices"], jsonObject["choice-ids"]);
-        console.log("populateFromJson triggered");
     }
 
     const populate = (imgsrc, prompt, choices, choice_ids) => {
@@ -59,7 +57,6 @@
             let $choicebox = $("#choice" + (i + 1));
             $choicebox.addClass("hidden");
         }
-        console.log("Choices are " + choices);
         if (choices) {
             for (let i = 0; i < choices.length; i++)
             {
@@ -75,7 +72,6 @@
             $(".restart").addClass("hidden");
         } else {
             $(".restart").removeClass("hidden");
-            console.log("Unhiding the restart buttons!");
         }
     }
 });
