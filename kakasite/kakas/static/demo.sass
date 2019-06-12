@@ -5,8 +5,12 @@ $fgcolor: #111
 $choicecolor: #39c8ef
 $choicecolor-hover: #39ef51
 
+$BODY-WIDTH: 50%
+
 $restartcolor: #ef5139
 $restartcolor-hover: #efc839
+$victorycolor: #45ef99
+$victorycolor-hover: $choicecolor-hover
 $textbody: #fff
 $thinpadding: 10px
 $footer-size: 180px
@@ -18,7 +22,7 @@ html
 
 body
     margin: auto
-    width: 80%
+    width: $BODY-WIDTH
     background-color: $fgcolor
     color: $textbody
 
@@ -110,6 +114,16 @@ body
 
 .restart:hover
     background-color: $restartcolor-hover
+
+.youwin
+    background-color: $victorycolor
+
+.youwin:hover
+    background-color: $victorycolor
+    cursor: default
+
+.restart.youwin:hover
+    background-color: $victorycolor-hover
 
 #game-panel
     min-height: 300px
