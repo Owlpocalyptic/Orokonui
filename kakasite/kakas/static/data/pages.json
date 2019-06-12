@@ -1,76 +1,95 @@
 {
     "pages":{
         "1a" : {
+            "ex":".png",
             "choices": [ "Look around at the trees", "Look around at the animals" ],
             "prompt" : "You gaze out at your patch of farmland. It is beautiful, full of potential, but there are no birds in sight. You have always dreamed of having a farm and a garden full of native birds: bellbirds, fantails, wood pigeons, and the rare elusive kaka. But you have no idea where to start.",
             "choice-ids": [ "2a", "2b" ]
         },
         "2a" : {
+            "ex":".gif",
             "choices" : [ "Invest in traps and weedkiller", "Invest in native seedlings"],
-            "prompt" : "Your property is surrounded by native bush. You look closer and see there are lots ofweeds and vines growing around the trees, and small tracks and footprints all around the trees.\n\nThere are also small fragments of bush on your property which don’t have as many weeds.",
+            "prompt" : "Your property is surrounded by native bush. You look closer and see there are lots of weeds and vines growing around the trees, and small tracks and footprints all around the trees.\n\nThere are also small fragments of bush on your property which don’t have as many weeds.",
             "choice-ids" : ["3c", "3d"]
         },
         "2b" : {
-            "choices": [ "Demand to know why the cow is not a kākā.", "Build a fence" ],
-            "prompt" : "The only animal on your farm is a cow.",
-            "choice-ids": [ "3a", "3b" ]
+            "ex":".gif",
+            "choices": [ "Build a fence" ],
+            "prompt" : "You look around and see your cows exploring the farmland and making themselves at home. Your cat Sparkle comes with you and starts some exploring of her own. You explore the bush on the edge on the edge of the property and see telltale signs of possums and rats.",
+            "choice-ids": [ "3a" ]
         },
         "3a" : {
-            "prompt" : "In a fit of rage, the cow turns on you. You, and every last kākā that may have settled on your property, have perished."
-        },
-        "3b" : {
+            "ex":".gif",
             "choices" : [ "Invest in native seedlings" ],
             "prompt" : "You build a fence around your cattle. They’re not very impressed by the restrictions on their grazing space, but at least this way they can’t trample any bush.",
+            "choice-ids" : [ "3b" ]
+        },
+        "3b" : {
+            "ex":".png",
+            "choices" : [ "Good stuff!" ],
+            "prompt" : "Now that you’re managing the forest on your property, you start planting native bush, especially trees with food kaka like to eat. You regularly check on the plants and they start growing well.",
             "choice-ids" : [ "4a" ]
         },
         "3c" : {
+            "ex":".gif",
             "choices" : [ "Good stuff!" ],
             "prompt" : "You go to the store and stock up on traps and weedkiller. While you’re there you also see lots of notices about controlling your pets and livestock. Once you get home you set up traps around the perimeter of your property and start attacking the weeds and vines choking the native trees.",
             "choice-ids" : [ "4a" ]
         },
         "3d" : {
+            "ex":".png",
             "prompt" : "You plant native tree seedlings and start planting them around the patches of bush in your property. Your cows trample over them and weeds choke them until they die. Back to square one."
         },
         "4a" : {
+            "ex":".gif",
             "choices" : [ "Look at your cat."],
             "prompt" : "You’ve been doing a lot of hard work, both getting your farm running and trying to make it a safe place for birds! But things seem to be working. You’re catching pests in your traps, you’re actively looking after the native forest, and starting to expand it with seedlings. This morning when you woke up, you heard loud birdsong. Things are going well!",
             "choice-ids" : [ "5a" ]
         },
         "5a" : {
+            "ex":".gif",
             "choices" : [ "You love Sparkle. Of course you'll let her out!", "Maybe not..."],
             "prompt" : "Even Sparkle is looking healthier, it must be all the exercise she’s getting these days! She meows to be let outside so she can explore your farm.",
             "choice-ids" : [ "6a" , "6b" ]
         },
         "6a" : {
+            "ex":".gif",
             "prompt" : "Sparkle loves you too. You’ve given her a whole new territory full of food and adventure! She brings back a mouthful of kaka chicks she’s caught to show you how much she loves you."
         },
         "6b" : {
+            "ex":".gif",
             "choices" : [ "Phew!"],
             "prompt" : "You take a second look at Sparkle and realise she’s gotten fatter over the last month, and you have no idea how far she wanders when you let her out. You decide to buy her a Birdsbesafe collar and keep her inside during the night. Sparkle hates the collar and is very unimpressed with you. A week later you see her try to catch a Bellbird and miss it because the collar is so loud. That was a close call. This way you can enjoy having Sparkle around without having to worry about the birds nearby.",
             "choice-ids" : [ "7a" ]
         },
         "7a" : {
+            "ex":".gif",
             "choices" : [ "Leave a bit of sandwich near the edge of your property.", "Resist the temptation. You spent a long time making this sandwich."],
             "prompt" : "At long last, you are finally seeing a kaka near your property! There must be a nest nearby after all. You know that they’re actually very curious and friendly birds, and you wonder if you could perhaps leave them a treat to tempt them closer?",
             "choice-ids" : [ "8a", "8b" ]
         },
         "8a" : {
+            "ex":".png",
             "prompt" : "The bread disappears, but you don’t see the kaka again. A few weeks later you smell something strange and find a nest full of dead kaka chicks. They’ve died of metabolic bone disease, which is caused by kaka giving their young food they can’t digest."
         },
         "8b" : {
+            "ex":".gif",
             "choices" : [ "Kaka safety secured!"],
             "prompt" : "You eat your sandwich, and the kaka flies away. You’re not sure if you’ll ever see it again, but gradually over the next few weeks you see more signs of it, until you’re sure it’s living near your farm.",
             "choice-ids" : [ "9a" ]
         },
         "9a" : {
+            "ex":".png",
             "choices" : [ "Rush outside with your camera to get a closer look.", "Look from inside and don’t push your luck."],
             "prompt" : "One morning as you’re getting up your hear a strange chattering noise. You look out your window to see a kaka! You’re so excited after all this work you’ve done!",
             "choice-ids" : [ "10a", "10b" ]
         },
         "10a" : {
+            "ex":".png",
             "prompt" : "You run outside to get some photos, and Sparkle runs after you. She tries to attack the kaka, who gets frightened and angry. It flies back into the bush. You see the kaka nearby from now on, but it doesn’t come too close to the house now. Maybe it’s for the best. Sparkle likes her privacy."
         },
         "10b" : {
+            "ex":".png",
             "prompt" : "You stay inside and look at each other for a moment, then the kaka flies away. Over the next few days the kaka starts flying into your garden and making itself at home. Then it brings friends."
         }
 
