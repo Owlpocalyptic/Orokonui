@@ -11,12 +11,13 @@
             <div class="choice hidden" id="choice3">Choice 3</div>
             <div class="choice hidden" id="choice1">Choice 4</div>
             <div class="choice hidden restart" id="restart">Try again!</div>
+            <div class="choice hidden youwin" id="restart"><strong>You win!</strong></div>
             <div class="choice hidden restart" id="learn-more">Learn more about you can help protect kākā.</div>
         </div>
     </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-    const base_path = "{% static 'img/kaka-gameX.jpg' %}";
+    const base_path = "{% static 'img/kaka-gameX' %}";
 
     const src_json = "{% static 'data/pages.json' %}";
 
@@ -43,11 +44,11 @@
 
     const populateFromJson = (jsonObjectID) => {
         let jsonObject = pages[jsonObjectID]
-        let imgsrc = base_path.replace('X', jsonObjectID);
-        populate(imgsrc, jsonObject["prompt"], jsonObject["choices"], jsonObject["choice-ids"]);
+        let imgsrc = base_path.replace('X', jsonObjectID + jsonObject["ex"]);
+        populate(imgsrc, jsonObject["prompt"], jsonObject["choices"], jsonObject["choice-ids"], jsonObjectID);
     }
 
-    const populate = (imgsrc, prompt, choices, choice_ids) => {
+    const populate = (imgsrc, prompt, choices, choice_ids, id) => {
         let $prompt = $("#prompt");
         $("#game-panel").attr("src", imgsrc);
         $prompt.text(prompt);
@@ -71,7 +72,12 @@
             }
             $(".restart").addClass("hidden");
         } else {
+            if (id == "10b") {
+            $("#learn-more").addClass("youwin");
+            $(".youwin").removeClass("hidden");
+            } else {
             $(".restart").removeClass("hidden");
+            }
         }
     }
 });
