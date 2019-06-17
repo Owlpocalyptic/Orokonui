@@ -84,7 +84,7 @@
             <div class="section" id="Week2Day1">
                 <h3>Unity: The Ignoble Beginning</h3><p class="label date">25/2/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
                     
-                <p>In order to get comfortable with Unity as an IDE, I started an online tutorial for "Roll A Ball", a simple
+                <p>In order to get comfortable with Unity as an IDE, I started an online tutorial for <a href="https://unity3d.com/learn/tutorials/projects/roll-ball-tutorial/introduction-roll-ball?playlist=17141">"Roll A Ball"</a>, a simple
                 game that demonstrated some features of Unity's native physics engine and touched on many of the ways that Unity
                 can simplify the process of creating and shipping a game. Most importantly, it gave me a refresher course in the
                 fundamentals of using Unity, including the prefab system and the all-important GameObject class, from which all
@@ -151,7 +151,7 @@
                     
                 <p>Today we looked at started to add filters and other mechanisms to impair the player's vision, so as
                     to complete our primary goal of raising awareness about visual impairments. I was able to find and
-                    import a library for colourblindness filters with minimal complications, and then manually messed
+                    import a <a href="https://projectwilberforce.github.io/colorblind/">library</a> for colourblindness filters with minimal complications, and then manually messed
                     with Unity's various native forms of lighting to create a (very unrealistic) "blindness" mode. I
                     implemented these in a separate "scene" (a direct clone of the original scene) with a reversed map.
                     I tried, sort of half-heartedly, to devise a programmatic method of producing this reversed map, but
@@ -171,7 +171,7 @@
                         So far, it has not gone well. The main issue I recognized was that the player was prone to getting trapped: if they walked
                         the ball into a dead end, it was basically impossible for the player to work their camera "behind" the ball and
                         push the ball back out. There were other issues with translating the camera direction (a Vector3 object,
-                        representing a straight line in 3D space) into a Quaternion (a data type that the Unity docs explicitly describes
+                        representing a straight line in 3D space) into a Quaternion (a data type that the Unity docs <a href="https://docs.unity3d.com/Manual/QuaternionAndEulerRotationsInUnity.html">explicitly describe</a>
                         as "not intuitively understandable") that I couldn't really iron out in these two hours, but these are
                         less existentially dire than the control design issue I identified.</p>    
             </div>
@@ -225,7 +225,7 @@
 
             <div class="section" id="Week6Day1">
             <h3>Environmentalist</h3><p class="label date">25/3/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
-                <p>Today I looked at creating VR environments. I followed a simple YouTube tutorial to get started: it covered
+                <p>Today I looked at creating VR environments. I followed a simple <a href="https://www.youtube.com/watch?v=2q9wc9Y35wg">YouTube tutorial</a> to get started: it covered
                     creating a VR setting through use of Unity sphere GameObjects and a custom material with a 360 photo applied to
                     it, emulating VR controls via the Google Daydream package for Unity, and interactive controls for players to
                     interact with. I did run into an issue with the emulator responsible for "click" events in GoogleVR, but my
@@ -241,13 +241,13 @@
                     It can't be dragged so that it's beneath the floor, or directly above the creation so that it looks directly down
                     on its centre.
                 </p><p> 
-                    My starting point for this control scheme was the "Input.GetAxis()" method native to Unity, which (as you might have
+                    My starting point for this control scheme was the <a href="https://docs.unity3d.com/ScriptReference/Input.GetAxis.html">"Input.GetAxis()"</a> method native to Unity, which (as you might have
                     intuited) returns a 3D vector based on the mouse's current position. It can take a string as an argument, allowing
                     developers to split the vector returned into X and Y components. This seemed to be the right port of call for my
                     intentions, as I figured it could be used to somehow translate the movement of the mouse into movement of the camera
                     object.
                 </p><p> 
-                    The method for this translation seemed to be "Transform.RotateAround()" method, which takes three arguments-- the
+                    The method for this translation seemed to be <a href="https://docs.unity3d.com/ScriptReference/Transform.RotateAround.html">"Transform.RotateAround()"</a> method, which takes three arguments-- the
                     vector representing the point to rotate around, the vector representing the line around which the rotation
                     should take place, and a float representing the angle of the rotation. This last float seemed like the proper
                     place to insert the float associated with the magnitude of the mouse's movement, but in
@@ -334,8 +334,16 @@
                 <p>After a two-week mid-semester break, I hopped right back into Unity. This time, I started working on a backup
                     project after two weeks of silence from my clients-but-not-really. This project, rather than employing AR or VR,
                     is instead a more traditional mobile game in a similar vein to games produced by Dunedin's own Runaway Games. Today I
-                    mostly worked on menus and navigation between scenes, which turned out to be quite simple-- just a single line of
-                    code in a single script. The hardest part was figuring out how to wire that script up to buttons!</p>
+                    mostly worked on menus and navigation between scenes, which turned out to be <a href="https://answers.unity.com/questions/1369393/how-to-switch-between-scenes.html">quite simple</a>-- just a single line of
+                    code in a single script. 
+                </p><p>
+                    The hardest part was figuring out how to wire that script up to buttons, and "save" the most
+                    recently visited scene in the event that the player wants to briefly return to the main screen. I came across the idea
+                    of <a href="https://gamedev.stackexchange.com/questions/110958/what-is-the-proper-way-to-handle-data-between-scenes">using a persistent GameObject</a> to hold the latter information 
+                    in my searches online, and it seems to be more effective than the alternatives presented: using PlayerPrefs (which seem to be
+                <em>too</em> persistent, as they persist between entire game sessions rather than just between scenes), and saving everything
+                    into an external save file (which again provides an excessive amount of persistence, and wastes valuable CPU time on retrieving
+                    all this save data every time I want to change scenes).</p>
             </div>
 
             <div class="section" id="Week9Day2">
@@ -408,7 +416,7 @@
                     Figuring this out was mostly a matter of managing to link my phone to Unity for debugging purposes. There seems to
                     be a bug in Unity Remote 5 that causes Unity Remote to fail to work if Unity is opened before the phone is connected
                     to the computer. While ordinarily this wouldn't be much of a problem, my computer doesn't have GPS capabilities, so
-                    it was hard to test the values between passed in to the map offset. Eventually, thanks to some Google sleuthing, I 
+                    it was hard to test the values between passed in to the map offset. Eventually, thanks to some <a href="https://answers.unity.com/questions/1282481/unity-remote-5-for-android-does-not-work-when-pres.html">Google sleuthing</a>, I 
                     figured out how to get around the bug, and in a matter of minutes after that used trial and error to work out
                     the maths needed to convert the latitude and longitude (rendered as percentages of the difference between the map's
                     maximum and minimum values) into a Vector2 object to reposition the map object by.</p>
@@ -435,6 +443,8 @@
                     a major complaint.
 
                 </p>
+                <p>I used <a href="https://www.terencelucasyap.com/using-sass-django/">this</a> tutorial to get me started. Naturally,
+                I ignored the parts about the boilerplate test website as I already had a suitable Django project to apply the Sass to.</p>
             </div>
 
             <div class="section" id="Week12Day2">
@@ -443,7 +453,7 @@
                     initial goal was to secure some 360 degree footage for the sake of the VR experience we will eventually produce, but
                     this became unfeasible when we discovered that we could not operate the 360 degree camera without a doctorate in
                     astrophysics or something. However, after walking through Orokonui Ecosanctuary for an hour, hopefully an edifying
-                    experience for the design students, we eventually encountered our contact at Orokonui Amanda, who we hadn't been
+                    experience for the design students, we eventually encountered our contact at Orokonui ("Amanda"), who we hadn't been
                     able to get in touch with for the last three weeks. Thanks to this stroke of good luck, we were able to show her
                     my fledgling (bird pun) efforts to create a two-dimensional KAKA GAME. She seemed pleased with the direction of
                     our work so far.</p>
@@ -511,8 +521,25 @@
             </div>
 
             <div class="section" id="Week15Day1">
-            <h3></h3><p class="label date">18/3/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
-                <p></p>
+            <h3>Small Showcase</h3><p class="label date">13/6/2019</p><p class="label professional">Professional</p><a href="#">Back to top</a>
+                <p>Another Thursday, another visit to Orokonui. This one was quite short and dense: we showed Amanda (our intermediary with
+                Orokonui) our functioning game, and received some direct feedback. The main takeaways from a technical perspective were that
+                she would've liked a way to "go back" to the last choice she made before she lost the game (to avoid unnecessary backtracking
+                through earlier choices that she'd already gotten right), and that she wanted a more emphatic ending when she finally reached
+                the You Win! screen.
+                </p>
+                <div class="imgwrapper">
+                <img src="img/evidence5a.png"></img>
+                </div>
+                <p class="caption">The opening scene.</p>
+                <div class="imgwrapper">
+                <img src="img/evidence5b.png"></img>
+                <p class="caption">One of many bad endings. Note the current lack of a "try last choice again" option.</p>
+                </div>
+                <div class="imgwrapper">
+                <img src="img/evidence5c.png"></img>
+                <p class="caption">The treasured and glorious good ending: having a bunch of kakas live on your farm.</p>
+                </div>
             </div>
             
     </body>

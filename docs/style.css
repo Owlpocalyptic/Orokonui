@@ -12,6 +12,11 @@ a
     color: #885A8B;
 }
 
+a:hover
+{
+	text-decoration: underline;
+}
+
 .title > a > h2
 {
     margin:0px;
