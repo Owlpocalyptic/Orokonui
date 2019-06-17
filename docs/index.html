@@ -47,7 +47,8 @@
                 <li><a href="#Week13Day1">Fun With JSON</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
                 <li><a href="#Week13Day2">Orokonui Round 2</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
                 <li><a href="#Week14Day1">Mobility</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
-                
+                <li><a href="#Week15Day1">Short Showcase</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
+
             </ul>
             </div>
     
@@ -477,10 +478,11 @@
                     <h4>OLD WAY</h4>
                     <code>   {
                         <div class="indented"> "pages": [
-                                <div class="indented">{ "id" : "1a",
-                <div class="indented">"choices": [ "Look around at the trees", "Look around at the animals" ],
-                                    "prompt" : "...",
-                                    "choice-ids": [ "2a", "2b" ]</div>
+                                <div class="indented">{ 
+                                        <div class="indented">"id" : "1a",<br />
+                                         "choices": [ "Look around at the trees", "Look around at the animals" ],<br />
+                                        "prompt" : "...",<br />
+                                        "choice-ids": [ "2a", "2b" ]</div>
                             },
                             ...</div>
                         ]</div>
@@ -489,8 +491,8 @@
                     {
                             <div class="indented">"pages":{
                                     <div class="indented">"1a" : {
-                                            <div class="indented"> "choices": [ "Look around at the trees", "Look around at the animals" ],
-                                "prompt" : "...",
+                                            <div class="indented"> "choices": [ "Look around at the trees", "Look around at the animals" ],<br />
+                                "prompt" : "...",<br />
                                 "choice-ids": [ "2a", "2b" ]</div>
                             },
                         ...</div>
@@ -521,7 +523,7 @@
             </div>
 
             <div class="section" id="Week15Day1">
-            <h3>Small Showcase</h3><p class="label date">13/6/2019</p><p class="label professional">Professional</p><a href="#">Back to top</a>
+            <h3>Short Showcase</h3><p class="label date">13/6/2019</p><p class="label professional">Professional</p><p class="label technical">Technical</p><a href="#">Back to top</a>
                 <p>Another Thursday, another visit to Orokonui. This one was quite short and dense: we showed Amanda (our intermediary with
                 Orokonui) our functioning game, and received some direct feedback. The main takeaways from a technical perspective were that
                 she would've liked a way to "go back" to the last choice she made before she lost the game (to avoid unnecessary backtracking
@@ -540,6 +542,30 @@
                 <img src="img/evidence5c.png"></img>
                 <p class="caption">The treasured and glorious good ending: having a bunch of kakas live on your farm.</p>
                 </div>
+                <p>In preparation for this visit, I upgraded the random stock photos I'd been using up until today to the
+                    custom art drawn for this project by the two design students, so as to put our best foot forward. As these images
+                    were a mix of .png and .gif files, I had to upgrade the .json file storing all of the image references by giving
+                    every single object an "ex" attribute-- an attribute that tells the main script which extension to substitute into
+                    the base image url.
+                </p>
+                <code>
+                    {
+                            <div class="indented">"pages":{
+                                    <div class="indented">"1a" : {
+                                            <div class="indented"> 
+                                <strong>"ex":".png",</strong><br />
+                                "choices": [ "Look around at the trees", "Look around at the animals" ],<br />
+                                "prompt" : "...",<br />
+                                "choice-ids": [ "2a", "2b" ]</div>
+                            },
+                        ...</div>
+                        }</div>
+                    }
+                </code>
+                <p>I also made it clear which scene was a victory, though in retrospect my original solution (a hardcoded if check
+                    to see if the current scene had the ID assigned to the victory scene) was a bit clumsy, and a more scaleable solution would
+                    be to add a "victory" attribute to that object in the .json file itself, then check for it in the javascript.
+                </p>
             </div>
             
     </body>
