@@ -5,7 +5,7 @@ html {
 
 body {
   margin: auto;
-  width: 80%;
+  width: 50%;
   background-color: #111;
   color: #fff; }
 
@@ -93,6 +93,16 @@ body {
 
 .restart:hover {
   background-color: #efc839; }
+
+.youwin {
+  background-color: #45ef99; }
+
+.youwin:hover {
+  background-color: #45ef99;
+  cursor: default; }
+
+.restart.youwin:hover {
+  background-color: #39ef51; }
 
 #game-panel {
   min-height: 300px; }
