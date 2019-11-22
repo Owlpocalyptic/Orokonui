@@ -160,14 +160,14 @@ iframe
 
 .imgrow > a > img
 {
-	max-width: 140px;
+	max-width: 340px;
 	border:solid black 2px;
 }
 
 .imgrow.three > a > img
 {
-	max-width:100%;
-	max-height:150px;
+	max-width:640px;
+	max-height:190px;
 }
 
 .imgrow.two > a > img
@@ -245,6 +245,21 @@ ul > li > *
 	display:table-cell;
 }
 
+ul > li > a
+{
+	min-width:240px;
+}
+
+.smalltext
+{
+	font-size: 5.5pt;
+}
+
+h3.smalltext
+{
+	font-size: 10pt;
+}
+
 .label + a
 {
 	float:right;
@@ -265,14 +280,21 @@ h3
 	display:inline;
 }
 
+h4
+{
+	display:inline;
+}
+
 code
 {
     color:blue;
 }
+
 .indented
 {
     margin-left:30px;
 }
+
 red
 {
 	color:red;
@@ -281,4 +303,36 @@ red
 sup
 {
     font-size:60%;
+}
+
+.content-button
+{
+	padding: 5px 30px;
+	font-size: 20pt;
+	background-color: #1275df;
+	color:white;
+	display:inline-block;
+	border-radius:5px;
+	margin-bottom: -3px;
+	margin-left:30px;
+}
+
+#Semester1Button
+{
+	background-color: #d14460;
+}
+
+
+#Semester2Button
+{
+	background-color: #4460d1;
+}
+
+.epithet
+{
+	padding: 0px 30px;
+	font-size: 20pt;
+	
+	margin-bottom: -3px;
+	display:inline-block;
 }

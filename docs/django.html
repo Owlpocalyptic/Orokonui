@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Documentation: Unity App</title>
+</head>
+<div class="title">
+<a href="index.html"><h2>Orokonui Kākā Conservation 2019</h2>
+<h3>As recounted and reflected on by Nicholas Mulrooney</h3></a>
+</div>
+
+<body>
+    <div class="body">
+        <div class="section" id="Introduction">
+            <h2>Kākā Quest Online</h2>
+            <h4>Purpose</h4>
+            <p>The overarching goal of this project is to raise local interest and engagement in Orokonui Ecosanctuary's
+                kākā conservation efforts, and the survival of Otago's kaka enclave in general. To this end, this web app
+                contains interactive and educational stories about the lives of kākās, and resources for learning more about
+                how to best avoid harming Dunedin's fledgling kākā population. </p>
+        </div>
+        <div class="section" id="Introduction">
+            <h3>General Notes</h3>
+            <p>
+                This app is written primarily in <a href="https://docs.djangoproject.com/en/2.2/">Django</a>, a web framework based on Python. The HTML and Javascript are compiled
+                from an HTML framework called <a href="http://jinja.pocoo.org/docs/2.10/">Jinja</a>, which allows each HTML page to have some degree of programmatic control flow
+                based on what goes on in the underlying Python code
+                without having to involve PHP. Its CSS is compiled from <a href="https://sass-lang.com/documentation">SASS</a>. Once a workstation is set up, all of this stuff can be compiled by a single command:
+                <code>pipenv run python manage.py runserver</code>.
+            </p>
+            <p>
+                Currently, this web app does not incorporate many of the more elaborate features of Django, such as a full database backend or even the
+                more elaborate programming made available by the incorporation of Python in the stack.
+            </p>
+        </div>
+        <div class="section" id="Game">
+            <h3>Kākā Game</h3>
+            <p>
+                This game is built entirely in Javascript, so as to avoid having to slow matters down with page loading and passing context variables
+                between views and so forth. Right now, it is the main and only point of complexity in developing for this site.
+            </p>
+                <div class="indented">
+                    <h4>The .JSON File</h4><p class="label date"><em>/kakasite/kakas/static/data/pages.json</em></p>
+                    <p>This is the "bullet" to be loaded into the "chamber" of the "gun" that is the overarching Kākā Game. It provides
+                        all the information about the interactive scenes in the form of a JSON object filled with keys relating to each
+                        "page" depicted in the game.
+                        <div class="imgwrapper">
+                            <img src="img/docs1.png"></img>
+                        </div>
+                        <div class="indented">
+                            <p><strong>"ex":</strong> Details the extension of the image file associated with this page. For example, the extension of the image shown by page 1a is ".png".
+                            </p>
+                            <p><strong>"choices":</strong> Gives the text to display for each button of each choice on this page. Empty if the page is a dead end.
+                            </p>
+                            <p><strong>"prompt":</strong> Gives the text to display in the main text box above the choices.
+                            </p>
+                            <p><strong>"choice-ids":</strong> Contains the key values used to retrieve the scene that each choice is associated with. For example, the only choice contained on page 3a will lead to page 3b.
+                            </p>
+                        </div>
+                    </p>
+                    <h4>The Index Template</h4><p class="label date"><em>/kakasite/kakas/templates/kakas/index.html</em></p>
+                    <p>This HTML holds the code for the Kākā Game as internal Javascript. The core gameplay loop is as follows:
+                        <ol>
+                            <li>Retrieve the current page's details as a JSON object.</li>
+                            <li>Clear all HTML elements on the page of any data unique to the last page.</li>
+                            <li>Insert the current page's details, including which pages it will lead to next, in the HTML elements on the page.</li>
+                            <li>Wait for the player to select the next page to go to.</li>
+                            <li>Repeat until no more choices can be made.</li>
+                        </ol>
+                        The main thing to remember about this code is that it uses <a href="https://api.jquery.com/">jQuery</a> to streamline the process of DOM
+                        traversal-- basically, it makes it easier to grab an element (like a div) by its ID or other distinguishing features and do things to it.
+                        A good example is the process of attaching and removing "mousedown" listeners associated with different arguments for the populate() method.
+                    </p>
+                        <div class="imgwrapper">
+                                <img src="img/docs2.png"></img>
+                            </div>
+                    <p>The $ sign means that jQuery is going to find the element on the page that mathes the query-- in this case, the element with the ID of
+                        "choice", plus <code>i + 1</code>. Then it does a bunch of stuff to it that would be really annoying and long-winded in default Javascript
+                        in a matter of lines, including attaching a "mousedown" listener that holds the crucial (to this game) method <code>populateFromJson(id)</code>
+                        to each of the choice elements it finds, where <code>id</code> is one of the values stored in the current page's JSON object's <code>choice-ids</code>
+                        attribute.
+                    </p>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

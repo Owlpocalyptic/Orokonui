@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Project - Semester 1, 2019</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <div class="title">
     <a href="index.html"><h2>Orokonui Kākā Conservation 2019</h2>
@@ -16,42 +17,75 @@
         <div class="body">
             <div class="section" id="Contents">
                 <h3>Table of Contents</h3>
-                <ul>
-                <li><a href="#Overview">Project Overview</a><p class="label professional">Professional</p></li>
-                <li><a href="unity.html">Documentation: Unity App</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Overview">Documentation: Django Website</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week2Day1">Unity: The Ignoble Beginning</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week2Day2">Finishing The Tutorial</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week3Day1">New Objectives</a><p class="label empty">Professional</p><p class="label empty">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week3Day2">Primp And Polish</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week4Day1">Eyes On The Prize</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week4Day2">Brave New World</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week4Bonus"><strong>Intermission: Computer Donation</strong></a><p class="label empty">Professional</p><p class="label empty">Technical</p><p class="label community">Community</p></li>
-                <li><a href="#Week5Day1">Out Of Control</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week5Day2">Stuck And Ready To</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week6Day1">Environmentalist</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week6Day2">Shifting Perspective</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week7Day1">Division Of Labour</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week7Bonus"><strong>Intermission: Security Seminar</strong></a><p class="label professional">Professional</p></li>
-                <li><a href="#Week8Day1">Image Collection</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week8Day2">Meet The Team</a><p class="label professional">Professional</p></li>
-                <li><a href="#Week9Day1">The Glorious Return</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week9Day2">The Orokonui Delegation</a><p class="label professional">Professional</p><p class="label empty">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week9Bonus"><strong>Intermission: Age Concern</strong></a><p class="label professional">Professional</p><p class="label empty">Technical</p><p class="label community">Community</p></li>
-                <li><a href="#Week10Day1">KAKA QUEST</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week10Day2">Global Kaka-Reporting System</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week11Day1">Translations</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week11Day2">Enter Django</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week12Day1">Sass It Up</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week12Day2">Orokonui Outing</a><p class="label professional">Professional</p></li>
-                <li><a href="#Week13Day1">Fun With JSON</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week13Day2">Orokonui Round 2</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
-                <li><a href="#Week14Day1">Mobility</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
-                <li><a href="#Week15Day1">Short Showcase</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
-
-            </ul>
+                <br /> <p id="Semester1Button" class="content-button">Semester 1</p> <p class="epithet">Bird Brained</p>
+                <div id="Semester1Contents">
+                    <ul>
+                        <li><a href="#Overview">Project Overview</a><p class="label professional">Professional</p></li>
+                        <li><a href="unity.html">Documentation: Unity App</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="django.html">Documentation: Django Website</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week2Day1">Unity: The Ignoble Beginning</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week2Day2">Finishing The Tutorial</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week3Day1">New Objectives</a><p class="label empty">Professional</p><p class="label empty">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week3Day2">Primp And Polish</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week4Day1">Eyes On The Prize</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week4Day2">Brave New World</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week4Bonus"><strong>Intermission: Computer Donation</strong></a><p class="label empty">Professional</p><p class="label empty">Technical</p><p class="label community">Community</p></li>
+                        <li><a href="#Week5Day1">Out Of Control</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week5Day2">Stuck And Ready To</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week6Day1">Environmentalist</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week6Day2">Shifting Perspective</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week7Day1">Division Of Labour</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week7Bonus"><strong>Intermission: Security Seminar</strong></a><p class="label professional">Professional</p></li>
+                        <li><a href="#Week8Day1">Image Collection</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week8Day2">Meet The Team</a><p class="label professional">Professional</p></li>
+                        <li><a href="#Week9Day1">The Glorious Return</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week9Day2">The Orokonui Delegation</a><p class="label professional">Professional</p><p class="label empty">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week9Bonus"><strong>Intermission: Age Concern</strong></a><p class="label professional">Professional</p><p class="label empty">Technical</p><p class="label community">Community</p></li>
+                        <li><a href="#Week10Day1">KAKA QUEST</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week10Day2">Global Kākā-Reporting System</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week11Day1">Translations</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week11Day2">Enter Django</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week12Day1">Sass It Up</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week12Day2">Orokonui Outing</a><p class="label professional">Professional</p></li>
+                        <li><a href="#Week13Day1">Fun With JSON</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week13Day2">Orokonui Round 2</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week14Day1">Mobility</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week15Day1">Short Showcase</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week16Day1">Quality Of Life And Bug Fixes</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                    </ul>
+                </div>
+                <br /> <p id="Semester2Button" class="content-button">Semester 2</p> <p class="epithet">Going Virtual</p>
+                <div id="Semester2Contents">
+                    <ul>
+                        <li><a href="VR.html">Documentation: Virtual Orokonui</a><p class="label professional">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week2Day1-2">Vive la Vida</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week3Day1-2">Loco-motion</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week3Day2-2">Tutorial 2.0</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week4Day1-2">Setting Things Up</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week4Day2-2">Virtually Experienced</a><p class="label professional">Professional</p><p class="label empty">Technical</p></li>
+                        <li><a href="#Week4Day3-2">Setting Boundaries</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week5Day1-2">Teleportation Fixes</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week5Day2-2">Misty Mayhem</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week6Day1-2">Objection Sustained</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week7Day1-2">Finite State Of Mind</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a class="smalltext" href="#Week8Day1-2">Flappy Bird But The Bird Is An Unmoving Eldritch Beast From My Nightmares</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week8Day2-2">The New Paradigm</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week9Day1-2">Hop To It</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week10Day1-2">Highlight Reel</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week10Day2-2">Twists And Turns</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week11Day1-2">Seeing Is (Be) Leaving</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week12Day1-2">Model Work</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week12Day2-2">Behaving Like Birds</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week13Day1-2">Getting Some Bread</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week13Day2-2">Twitter IRL</a><p class="label empty">Professional</p><p class="label technical">Technical</p></li>
+                        <li><a href="#Week14Day1-2">Information Desk</a><p class="label empty">Professional</p><p class="label empty">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week14Day2-2">Quality Of Life</a><p class="label empty">Professional</p><p class="label technical">Technical</p><p class="label design">Design</p></li>
+                        <li><a href="#Week15Day1-2">Beta Showcase</a><p class="label professional">Professional</p><p class="label empty">Technical</p></li>
+                    </ul>
+                </div>       
             </div>
-    
+            
+        
             <div class="section" id="Overview">
                 <h3>Project Overview</h3><p class="label professional">Professional</p><a href="#">Back to top</a>
                 <p>This project is a multidisciplinary team effort created as part of the "Games" department of Project 1.
@@ -357,17 +391,17 @@
                     we wanted to take this.
                 </p><p>    
                     The Orokonui people had several different, but interlinked, ideas for what our application could do. The core goal
-                    was given as "engaging the local community in Kaka conservation efforts", and we were able to come up with several
-                    possible implementations. The most exciting one, an app that shows in real time where tagged Kakas currently are
+                    was given as "engaging the local community in Kākā conservation efforts", and we were able to come up with several
+                    possible implementations. The most exciting one, an app that shows in real time where tagged Kākās currently are
                     in the Dunedin area, is also the least likely one to come to fruition: our contacts at Orokonui said that the
                     earliest we can expect any headway on that technology is August, making it a less-than-ideal starting point. Another
                     possible feature in a similar vein is a version of a web app that Orokonui already has for kias, which allows users
                     to report kia sightings. This has the advantage of being actually possible for us right now, and creates a similar 
-                    "my gosh the kakas are all around me" feeling to the full-on tracker.
+                    "my gosh the kākās are all around me" feeling to the full-on tracker.
                 </p><p>   
                     Another, more education-oriented idea we had was creating a sort of interactive story, in which players must guide
-                    a kaka or family of kakas to survival. The idea is that this application would be able to teach people without seeming
-                    like it's preaching to them, by letting them discover for themselves what kind of things hurt kakas in the wild. It's
+                    a kākā or family of kākās to survival. The idea is that this application would be able to teach people without seeming
+                    like it's preaching to them, by letting them discover for themselves what kind of things hurt kākās in the wild. It's
                     this idea that I decided to start with: it has the lowest barrier to entry for me personally, and can be implemented
                     both on mobile and online.</p>
             </div>
@@ -395,7 +429,7 @@
             </div>
 
             <div class="section" id="Week10Day2">
-            <h3>Global Kaka-Reporting System</h3><p class="label date">9/5/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+            <h3>Global Kākā-Reporting System</h3><p class="label date">9/5/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
                 <p>With the "QUEST" about as done as it can be, until my Design minions figure out more about how they want to
                     approach the narrative, I turned to the KAKA MAP idea that we had. We'd just done GPS functionality in Android,
                     so I had some idea of how I was supposed to go about this, and I soon found that Unity had its own API for dealing
@@ -409,9 +443,9 @@
             <div class="section" id="Week11Day1">
             <h3>Translations</h3><p class="label date">13/5/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
                 <p>Today was a good day. Continuing on the work of yesterday, I was able to get the map finally to display my device's 
-                    current location, opening the door to Kaka sighting reporting and sharing. The endgame plan is to have this 
-                    interface display the locations of actual Kaka being tracked by Orokonui itself, but that's still a theoretical 
-                    prospect until other parties working with Orokonui can finish their projects for actually tracking the Kaka. For 
+                    current location, opening the door to Kākā sighting reporting and sharing. The endgame plan is to have this 
+                    interface display the locations of actual Kākā being tracked by Orokonui itself, but that's still a theoretical 
+                    prospect until other parties working with Orokonui can finish their projects for actually tracking the Kākā. For 
                     now, I'll be focusing on manually reported sightings.
                 </p><p>     
                     Figuring this out was mostly a matter of managing to link my phone to Unity for debugging purposes. There seems to
@@ -425,8 +459,8 @@
 
             <div class="section" id="Week11Day2">
             <h3>Enter Django</h3><p class="label date">16/5/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
-                <p>Today I switched to working on the Kaka website, which is intended to be an educational resource for people in a
-                    position to help prevent needless Kaka deaths. I decided to build it in Django, due to the relative ease of setting
+                <p>Today I switched to working on the Kākā website, which is intended to be an educational resource for people in a
+                    position to help prevent needless Kākā deaths. I decided to build it in Django, due to the relative ease of setting
                     up a site and routes using it and the potential for expansion given by the MVC character of the framework-- for
                     instance, Django offers in-built ways to save and authenticate user data, for if we decide to implement a forum or
                     high scores at some point. There is also a wealth of information online about working with Django, including
@@ -435,7 +469,7 @@
 
             <div class="section" id="Week12Day1">
             <h3>Sass It Up</h3><p class="label date">20/5/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
-                <p>Worked some more on the Kaka website. The big choice today was adding Sass to the stack, to make changes to my
+                <p>Worked some more on the Kākā website. The big choice today was adding Sass to the stack, to make changes to my
                     CSS less agonising: I anticipate that I'll have to pull off two or three large overhauls of the site's design before
                     this project is through, and I'm sure future devs will have to do the same.</p>
                 <p>I decided to use the .sass extension rather than the .scss extension for my SASS files because, frankly, .sass is 
@@ -463,7 +497,7 @@
             <div class="section" id="Week13Day1">
             <h3>Fun With JSON</h3><p class="label date">27/5/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
                 <p>Thanks to some insights from our glorious supervisor Adon, I was able to produce a very scaleable interactive game
-                    in Javascript for the Orokonui Kaka web app. The "trick" is that it uses a single JSON file to store all the
+                    in Javascript for the Orokonui Kākā web app. The "trick" is that it uses a single JSON file to store all the
                     information about each scenario: the prompt, the name of the associated image file, and most importantly the IDs of
                     the scenarios each choice in the scenario leads to. 
                     
@@ -487,6 +521,7 @@
                             ...</div>
                         ]</div>
                     }  </code>
+                    <br />
                     <h4>NEW WAY</h4><code>
                     {
                             <div class="indented">"pages":{
@@ -517,7 +552,7 @@
             <div class="section" id="Week14Day1">
             <h3>Mobility</h3><p class="label date">6/6/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
                 <p>Today I added some minor changes to the project's .sass file to make it responsive to mobile formats. Then,
-                    following some prompting from my supervisor, I looked into converting the Kaka web app into a progressive web app,
+                    following some prompting from my supervisor, I looked into converting the Kākā web app into a progressive web app,
                     or a web app that can be installed directly on a computer or phone and completely or partially accessed from
                     offline, as opposed to being hosted directly on a server and therefore inaccessible without Internet access.</p>
             </div>
@@ -540,7 +575,7 @@
                 </div>
                 <div class="imgwrapper">
                 <img src="img/evidence5c.png"></img>
-                <p class="caption">The treasured and glorious good ending: having a bunch of kakas live on your farm.</p>
+                <p class="caption">The treasured and glorious good ending: having a bunch of kākās live on your farm.</p>
                 </div>
                 <p>In preparation for this visit, I upgraded the random stock photos I'd been using up until today to the
                     custom art drawn for this project by the two design students, so as to put our best foot forward. As these images
@@ -567,6 +602,622 @@
                     be to add a "victory" attribute to that object in the .json file itself, then check for it in the javascript.
                 </p>
             </div>
+
+            <div class="section" id="Week16Day1">
+            <h3>Quality Of Life And Bug Fixes</h3><p class="label date">20/6/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
+                <p>Following the feedback our client gave us last week, I implemented a "go back" button that appears after every loss,
+                which allows players to immediately undo their game-losing mistake and keep going. This makes the game less frustrating to
+                play to completion, and makes it a more effective learning experience.
+                </p>
+                <p>In the process of implementing this feature, I came across the cause of a minor bug.
+                The symptom of the bug was that as a player selected choices, "flashes" of previous choices would consistently start appearing
+                before the result of the player's current choice appeared, as if the game were loading those choices first. Using my galaxy-sized brain
+                and towering, Rick-and-Morty-watching intellect, I realized that this
+                was exactly what was happening: each time my code loaded a new scene, it attached a "mousedown" event to each choice button via jQuery
+                <em>without removing the mousedown events attached in the previous screens</em>. For the earlier choices, this didn't have much of an
+                effect, as the page was able to run down the list of mousedown events very quickly, but as more and more events were added to the stack
+                this phenomenon slowed down the page considerably. 
+                </p>
+                <p>Fortunately, once I figured it out it was relatively easy to google jQuery ways to remove
+                listeners from existing input elements. I was briefly confused between "onclick" and "mousedown" events, but when I learned how to
+                read my own code I soon found <a href="http://api.jquery.com/off/">this</a> handy method. Now my game calls it on each button before it
+                tries to add any new mousedown listeners to them, resulting in expected behaviour.
+                </p>
+            </div>
+
+
             
-    </body>
+            <div class="section" id="Week2Day1-2">
+                <h3>Vive la Vida</h3><p class="label date">02/08/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+                    
+                <p>
+                        Today I set up the Vive, with help from assorted Project room randoms. It was an interesting experience.
+                        Though we experienced some minor setbacks, such as needing to switch PCs (the first computer we used had an
+                        insufficient graphics card) and the endless torment of trying to extract the Ethernet cable from an unused
+                        Project computer (which we wound up not even using-- there was a shorter, more accessible one among our
+                        allotted supplies), our success was as inevitable as it was total.
+                </p>
+            </div>
+
+            
+            <div class="section" id="Week3Day1-2">
+                <h3>Loco-motion</h3><p class="label date">05/08/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+                    
+                <p>
+                        Today we tried out some games on the Vive. The first one was a glitchy mess set in a maze inhabited by purple
+rabbits, creatively named "Labyrinth" and filled with what I can only assume were instructions written entirely
+in Chinese. This game had a really cool implementation of the teleport feature that I've heard many VR games use
+to effect movement, complete with cool arcs leading directly to the crosshairs, but did not seem to be programmed
+by someone with an adequate understanding of what walls are: attempting to teleport to a wall put the player halfway
+inside the wall, allowing them to freely access the other side of the wall.
+</p><p>
+The other game was about Spiderman. The movement scheme for this game was more interesting: being based on
+Spiderman, instead of teleporting or walking, the player pressed a button to shoot webs that tethered them to
+objects in the game world, then another button to pull them towards the end of their web. While this was
+interesting, it was not particularly intuitive, and the instructions for getting it to work vanished nigh
+instantly and couldn't be pulled back up. Additionally, prolonged gameplay was vaguely nausea-inducing, mostly
+from the swinging motion while the player was swinging from place to place.</p>
+            </div>
+            
+            <div class="section" id="Week3Day2-2">
+                <h3>Tutorial 2.0</h3><p class="label date">08/08/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+                    
+                <p>
+                        Today I completed a <a href="https://www.raywenderlich.com/9189-htc-vive-tutorial-for-unity">tutorial</a> on 
+developing for VR devices. Essentially the key is to import the free SteamVR library from the Unity store, then
+know what I'm doing with all the assets it contains. The key asset is the CameraRig prefab, which holds child
+objects representing both controllers: it is this that serves as the gateway for the VR device's input signals
+into the VR application.
+</p><p>
+I did run into a couple of problems while trying to follow this tutorial. First, the tutorial gave faulty
+instructions at one step: it advised deleting a number of "actions" from the default action set. (An action
+set is an extra layer of abstraction between the input received from the hardware, and the programming defined
+in Unity, that allows things like personalized keybinds and cross-platform compatibility between different
+VR devices).  One of the actions it said would be okay to delete was "pose"... but deleting this turned out
+to not be okay, and totally neutered all inputs from both controllers (though not the headset). Frustratingly, 
+it was hard to both pin down the problem (Googling the keywords and/or the error code returned a lot of results 
+with similar symptoms) and fix it-- simply recreating the Pose action in the default action set was not sufficient,
+and I ended up having to create an identical project (this time <em>not</em> deleting the Pose action) to get
+the controllers working again.
+</p><p>
+Anyway, doing everything a second time did help make the process of applying VR to a project seem more simple and 
+approachable on like a visceral level, so it wasn't that big a loss from a learning perspective.</p>
+            </div>
+
+            <div class="section" id="Week4Day1-2">
+        <h3>Setting Things Up</h3><p class="label date">12/08/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+            
+        <p>
+            Today I worked on the setting of the VR game: a forest, based loosely on the natural Otago environment that kākās
+            as a species are evolved to survive in. Since we'll only have the one location (at least in the current scope), it 
+            means I can put extra work into making the world look better.
+        </p>
+        <div class="imgrowwrapper">
+            <div class="imgrow">
+                <a href="img/[] - 08-12a.png"><img src="img/[] - 08-12a.png"/></a>        
+                
+                <a href="img/[] - 08-12b.png"><img src="img/[] - 08-12b.png"/></a></div>
+        </div>
+        <p>
+            I found a short <a href="https://www.youtube.com/watch?v=2PlAeyyJTF4">tutorial</a> that explained the concept of a 
+            Terrain object in Unity; 
+            this is a sort of pre-made "ground" object that can be randomly populated with objects designated as "trees" and 
+            certain inconsequential decor (including grass and small stones) designated as "details". Right now, the trees are 
+            serviceable (I might revisit
+            them later to fine-tune their coloration so as to better mimic Otago's natural trees), but the grass is problematic.
+            Since it's based entirely on 2D sprites, it seems that Unity has automatically applied rotation code to make all
+            grass sprites in view rotate in unison to face the main camera of the scene. This isn't so bad if the viewer
+            keeps their head level (parallel to the ground), but as soon as they look down (perpendicular to the ground), the
+            grass ends up pressed flat against the ground, which is not how grass works in real life<sup>[
+                <a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed">citation needed</a>]</sup>.
+                
+        </p>
+                </div>
+        <div class="section" id="Week4Day2-2">
+                <h3>Virtually Experienced</h3><p class="label date">14/08/2019</p><p class="label professional">Professional</p><a href="#">Back to top</a>
+                    
+                <p>    
+Today the two design students and I held a quorum regarding the VR situation, and tested out some more VR games. One
+game in particular, <a href="https://store.steampowered.com/app/629970/Beast_Pets/">"Beast Pets",</a> seemed to
+hit a lot of the same tonal and thematic beats that we're trying to achieve with KAKA QUEST, especially with minor
+things like the creatures' movement. There are some key differences, though: our main goal is to teach players
+<em>not</em> to interfere with kākā, and so we'll probably make most of the interaction happen at a distance (and
+have the kākā fly away if the player goes too close to them).
+</p><p>
+The other stuff we tried wasn't all that inspiring. "The Blue" was a nice VR animation about watching a whale
+swim around under the sea, but it didn't have any interactivity or even programmed interactions between animals;
+it was just a short VR movie. "Fun VR Farm" was, despite its promising name, not actually much fun: it suffered from
+letting players switch between two different movement methods when one of those methods was vastly superior to the
+others-- though it was interesting that they were able to detect which position the touch-pad was clicked from,
+making the bindings for "move" and "switch movement option" the same goddamn button was almost as bad an idea as
+<em>having</em> a switch movement option button in the first place-- if you can do teleportation, there's no reason
+to even have the nauseating "slide" motion. I did give it a shot, thinking perhaps the sliding was for precise 
+micro-movements to slide the player into the perfect position, but the slide was still much harder to use for this 
+purpose than teleporting was.
+</p><p>
+On the plus side, this game did give me some ideas for how to make pathing work for the kākā; the animals in Fun VR Farm
+basically path endlessly towards specific ball-shaped controls that the player can pick up and carry (which allows
+them to compel the animals to follow them). I wonder if it would be possible to have other kākā temporarily hold
+similar (but invisible) objects to cause their fellow kākā to follow them, under certain circumstances.
+    </p>
+            </div>
+            <div class="section" id="Week4Day3-2">
+                <h3>Setting Boundaries</h3><p class="label date">15/08/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+                    
+                <p>
+                        Today the name of game was walling off most of the forest (which is way too big and sand-boxy for a singleplayer
+experience centred entirely on learning how not to kill kākā) by limiting the teleportation to a specific region--
+a clearing I created solely for the player to exist in.
+</p><p>
+While the teleportation implementation I was using (inherited from the tutorial I used last week) made it easy
+to introduce teleportable locations in theory, there were one or two snags. First, apparently the tutorial's method 
+requires "teleportable" objects to have Mesh Collider components for them to count. Though this makes sense in
+retrospect (the method involves drawing a line from the controller to the point on a teleportable object it's
+pointing at, and you'd need a mesh collider to detect individual points on an object's surface), it was not
+immediately obvious and took some trial-and-error (mostly comparing different default GameObjects to see which
+ones automatically worked with the teleport script) to work out.
+</p><p>
+Once I had a relatively small teleportable region, I thought it might be nice for the player to visually be able to
+see their maximum range of travel while looking for valid locations to teleport to, so I added some extra lines
+to the teleportation code to display a white ring (a .png file I created in Photoshop) over the boundaries of the
+teleportable region whenever the player holds down the teleportation button. Though this strategy was quick and
+easy to implement (the only hiccup was that I forgot to assign my ring asset to the right variable at first), it
+does have the downside of being harder to scale-- if I wanted to add a new teleportable region of any size or shape
+to my game, I would have to manually create a new ring for it instead of just slapping it in. Fortunately, the
+scope of the game only calls for a single teleportable region, so for now I will be able to escape paying the
+piper for my sins.</p>
+            </div>
+
+            <div class="section" id="Week5Day1-2">
+                    <h3>Teleportation Fixes</h3><p class="label date">19/08/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
+                        
+                    <p>
+                            Today I improved the teleportation system and interface by making the reticule for teleporting behave more
+intuitively: instead of getting "stuck" at the edge of the teleportable region, the reticule now goes wherever the
+player points, even if the area can't be teleported to. Now, when it passes over a region that isn't eligible for
+teleportation, the reticule instead turns red-- the trick for which I learned from 
+<a href="https://answers.unity.com/questions/353015/how-to-instantiate-a-prefab-and-change-its-color.html">this 
+helpful answer at unity.com</a>. This was somewhat harder than it first seemed (at first I hoped that this line
+would be all I needed), but easier than it seemed after that didn't work-- all
+I had to do was create a custom shader, using code helpfully provided by 
+<a href="https://answers.unity.com/questions/189695/add-color-property-to-unlit-alpha.html">this page</a>. It seems
+that the original source for this code, the Unify Wiki, has moved domains in the years since 2011, making it hard
+to find the true origin of this snippet. Either way, learning how to write shaders like this seems like it's going 
+to be useful as my project incorporates ever-increasing numbers of 3D models and textures.
+</p>
+        <div class="imgrowwrapper">
+                <div class="imgrow">
+                    <a href="img/[] - 08-19a.png"><img src="img/[] - 08-19a.png"/></a>        
+                    
+                    <a href="img/[] - 08-19b.png"><img src="img/[] - 08-19b.png"/></a></div>
+            </div>
+            <p class="caption">The large white circle represents the boundary that the player can teleport within.</p>
+            <p>
+After I managed to implement the colour change, I did make a minor oversight by forgetting to include a line saying
+"shouldTeleport = false", which resulted in a lot of unexpected behaviour when the player got close to the edge
+of the ring. For some reason it became possible to put the reticule higher up than the floor if you managed to
+escape the ring through bugs stemming from this mistake, which allowed the player to teleport far above the clearing.
+Fortunately, now that I've closed off the player's ability to escape the ring, fixing the air-teleport bug itself
+is no longer necessary (which is good, because I can't really tell what's causing it).
+</p>
+                </div>
+
+            <div class="section" id="Week5Day2-2">
+                    <h3>Misty Mayhem</h3><p class="label date">22/08/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
+                    
+                <p></p>
+                <img src="img/[] - 08-22.png"/>
+                    <p>
+                            Today I started with making the forest more presentable: adding fog and walls to reduce visibility so that the edge 
+of the world is no longer visible, and trying to find tree models that look better than the ones I've been using
+so far. The fog and walls worked well (I looked up a <a href='https://www.youtube.com/watch?v=TChSVtI4GEk'>tutorial</a>
+ for adding fog), but I gave up on tree models after a few attempts. I suppose I can bug the Design students
+for better models if I really need them.
+</p><p>
+        
+More disconcertingly, it transpired that the bug I mentioned last time was still relevant. You see, although
+I had successfully prevented the player from escaping the ring of teleportation by teleporting, they could still
+<em>walk</em> over the line and start teleporting upwards that way. Therefore, this time I was more aggressive
+about fixing the bug: instead of allowing the player to change their elevation via teleportation, I've modified
+the Teleport code to set the player rig's transform's new Y value to exactly the same as its old Y value. This will
+need to be changed again if the scope grows to include natural elevation in terrain (since the way my code is now,
+a person trying to teleport on top of a hill will just end up inside it), but for now I've eliminated the bugs
+around this, so this is fine.
+        </p>
+        <div class="imgrowwrapper">
+                <div class="imgrow">
+                    <a href="img/[] - 08-22a.png"><img src="img/[] - 08-22a.png"/></a>        
+                    
+                    <a href="img/[] - 08-22b.png"><img src="img/[] - 08-22b.png"/></a>
+                </div>
+                <div class="imgrow">
+                    <a href="img/[] - 08-22d.png"><img src="img/[] - 08-22d.png"/></a>        
+                    
+                    <a href="img/[] - 08-22e.png"><img src="img/[] - 08-22e.png"/></a>
+                </div>
+            </div>
+            <p class="caption">This bug let players climb very far above the planet's surface.</p>
+
+        <img src="img/[] - 08-22 the bugfix.png" />
+        <p class="caption">The new and improved teleport code, which fixed the above bug.</p>
+        </div>
+
+        <div class="section" id="Week6Day1-2">
+                <h3>Objection Sustained</h3><p class="label date">26/08/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+                    
+                <p>
+    This time, I worked on getting 3D objects into the world, the end goal being balls that the kākā can interact with.
+    My scene already had objects in it, thanks to the tutorial I finished in the first couple of weeks, so in theory
+    this was as easy as just reactivating the parent object. In practice, this was complicated slightly by my solution
+    to an earlier problem-- my invisible cylinder, which I created to help me register valid teleportation attempts. 
+    I'd left an unnecessary Capsule Collider attached to it, which meant any attempt to spawn an object inside the
+    valid teleportation region (AKA the only playable area of my game) would instantly forcibly eject that object
+    from the region. I was able to fix this problem entirely by deleting the Capsule Collider component.
+</p><p>
+    I also started working on bird spawning. Essentially, I want birds to spawn in a random region on the edge of the
+    playable area. I ran into a couple of issues with spawning. Turning my first bird object into a prefab stripped the
+    public GameObject reference to the spawn clearing from the resulting prefab, and it transpires that it's impossible
+    to drag an object from the hierarchy to any reference on a prefab too. To remedy this, I had to modify my Bird
+    code to set its reference to the spawn clearing automatically, if its reference is null to begin with.
+                        
+</p>
+</div>
+
+<div class="section" id="Week7Day1-2">
+        <h3>Finite State Of Mind</h3><p class="label date">02/09/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+            
+        <p>
+Today marks the day I started working on my beautiful bird behaviour. The end goal is to have them flying around
+in relatively believable paths, and interacting with the environment in ways that aren't just phasing through
+everything that exists. To this end, I have begun researching finite state machines in Unity. There is a handy
+set of <a href="https://www.youtube.com/watch?v=NEvdyefORBo">video tutorials on this very topic</a> that I have 
+found on Youtube. So far it has been relatively easy to follow along and make the modifications that my project
+needs as I go along (for example, eschewing the waypoint system used in the video for random direction selection,
+which is better for birds).
+</p><p>
+I did have one problem with the random direction selection, which is that I wasn't waiting for my birds to
+finish rotating before they selected another random direction and started trying to turn in <em>that</em>
+direction too, which resulted in a vibrating effect but otherwise very little change in movement (since all
+the new random directions averaged out to zero). To fix this, I added an extra clause in the direction
+selection code which mandated that my birds would <em>not</em> attempt to rotate towards a new direction until it 
+had finished rotating to the last new direction.
+                </p>
+                </div>
+            
+                <div class="section" id="Week8Day1-2">
+    <h3 class="smalltext">Flappy Bird But The Bird Is An Unmoving Eldritch Beast From My Nightmares</h3><p class="label date">09/09/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+        
+    <p>
+            Everything is terrible.
+        </p><p>
+            I have attempted to replace my bird orbs with models that more closely resemble actual birds. However, this has
+            come at a confusing and vexing cost. These new models resist attempts to programmatically update their transform
+            components, leaving my efforts to move them (a fundamental part of programming in the movement of birds) utterly
+            fruitless.
+        </p><p>
+            I was able to ascertain two possible methods of resolving this problem. Option one is to stick with my previous 
+            bird prefab, but switch the Mesh Filter on it from a sphere to the new model shape. This allows me to modify the
+            transform components of the birds, but comes at the cost of divorcing the bird animations (such as hopping along
+            the ground or flapping its wings) from the simple way that Unity's native FSM provides. If I am to use this
+            method, I will need to find some way to invoke the animations programmatically.
+        </p><p>
+            Option two is to make the new prefab work, by figuring out what is causing the issue with the transform component
+            not registering any attempts to change it. My efforts to Google the cause of this problem (and, ideally, solutions)
+            have been abortive at best. I have yet to find any examples of this problem happening to anybody, and fear that I
+            never will. Existence is pain. The gods, I can only assume, have forsaken me for my sins.
+        </p><p> 
+            Here are some images I collected from the process of learning all this that help to express the extent of my suffering.
+        </p>
+            <img src="img/[] - 09-09a.png"/>
+            <p class="caption">These are "birds" in the same way that this bird model is "fun to work with."</p>
+            
+            
+            <img src="img/[] - 09-09b.png"/>
+            <p class="caption">My soul while I type these words.</p>
+</p>
+</div>
+
+<div class="section" id="Week8Day2-2">
+        <h3>The New Paradigm</h3><p class="label date">12/09/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+            
+        <p>
+                Like a flappy PHOENIX, I have risen from the ashes of despair. As the two options I outlined last session have proven
+absolutely hopeless, I have decided to build an entirely new Finite State Machine from the ground up, and thus
+forge a third option from the fires of eternal suffering.
+</p><p>
+This new FSM has states based explicitly on the animations of the bird model that I got from the Unity Store, and 
+is somehow able to execute the few lines of code I reused from my previous FSM on top of this, despite the two
+hours of torment (where those precise lines of code totally failed to do anything) I endured on Monday. In other
+words, it combines the best of both worlds.
+</p><p>
+Now the main challenge is figuring out how to have the animated hops that the bird model can do correspond to
+actual movement of the model: my current implementation has the model blink briefly back to the original position
+after the hop is completed, before snapping back to the new position, which is not how kākās move in real life<sup>
+[<a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed">citation needed</a>]</sup>. There are a couple of built-in callback methods for Unity StateBehavior descendants 
+(including the class for my Hop behaviour) that may individually be crucial pieces of the puzzle here. More research
+and trial and error will be required.
+            </p>
+            </div>
+            <div class="section" id="Week9Day1-2">
+                    <h3>Hop To It</h3><p class="label date">16/09/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+                        
+                    <p>Today I worked some more on my new FSM, once again trying to tackle the issue of hopping. This time, Adon had
+                            some sage words of wisdom: he pointed out that I could just use a jumping animation to have the kākā model go
+                            straight up and then straight back down, then vary its X and Z positions accordingly to have it hop in a given
+                            direction. I used a sin function to make the movement more natural-- on the Y axis, it slows as it goes up until it 
+                            reaches the zenith of its jump, then accelerates until it hits the ground. On the X axis, its speed is basically
+                            constant. This has the advantage of making it easier for me to implement multiple quick jumps: I can just multiply
+                            the coefficient of the time argument by the number of jumps I want the kākā to make within a short period of time.
+                            </p>
+                        </div>
+        <div class="section" id="Week10Day1-2">
+                <h3>Highlight Reel</h3><p class="label date">23/09/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+                    
+                <p>Today I made it possible to highlight my birds by clicking the trigger at them. It's an extension of the same method
+                        that makes teleportation possible: when the player presses the "interact" button, the controller fires out an
+                        invisible laser at the target location. If this laser finds a valid target (i.e. a kākā), it returns the target's
+                        "outline" component and activates it. When the interact button is released, the kākā's outline is deactivated.
+                    </p><p>        
+                        There were a couple of difficulties in this process, once I found the shader package that worked best with my
+                        goals. It transpires that the Bird prefabs as they currently exist can't have borders around them, or even shaders--
+                        they're parents that contain the actual bird model. The longest-lived error I had came down to having foolishly
+                        added an "outline" component to the Bird parent, in addition to the model, which blocked my code from finding the
+                        actually useful outline (since it stopped at the parent's outline component first). When I removed this from my
+                        Bird prefab, everything went well.
+                    </p><p>  
+                        Once I had the active highlighting working, it was trivially easy to move that code to the Camera object itself, so
+                        that the invisible laser is fired from between the player's eyes every frame. This way, instead of clicking a button,
+                        the player simply has to look at a bird in order to highlight it. 
+                    </p><p>  
+                        Eventually, this feature will be enhanced by making the birds do something else while highlighted: they will speak,
+                        either in regular kākā squawks or in English.                        </p>
+                    </div>
+<div class="section" id="Week10Day2-2">
+        <h3>Twists And Turns</h3><p class="label date">26/09/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+            
+        <p>As I am a seemingly insatiable glutton for punishment, I have returned to the cruel netherworld of quaternions and 
+        rotating transforms. In this instalment, I have been trying to make the camera rotate to face the centre of my kākā 
+        clearing whenever the player teleports, since the centre of the clearing (where the bird feeder will be) is the 
+        primary region where gameplay will take place. So far, there seem to be issues with elevation-- though the camera
+        rotates alright, for some reason at closer proximities to the centre of the map, it shows up close to the floor,
+        and so ends up angled very far up.</p>
+    </div>
+
+<div class="section" id="Week11Day1-2">
+        <h3>Seeing Be... Leaving</h3><p class="label date">17/10/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
+            
+        <p>Yesterday, the design crew asked about revamping the movement scheme for the VR game. Instead of free teleportation,
+                they want to experiment with allowing players to teleport to specific points: and instead of using a controller to
+                do so, they want it to be based on line-of-sight, so that all a player has to do is look at an orb and then, after
+                a short delay during which they can abort the teleportation, teleport to that orb.
+            </p>
+            <img src="img/[] - 10-17a.png"/>
+            <p class="caption">The initial set of orbs.</p>
+            <p>  
+                I made it work. To get the delayed behaviour, as well as display a rapidly shrinking circle that acts as feedback
+                for the player (so that they know they are going to teleport), I used a coroutine, which starts when the player's
+                line of sight crosses a teleportation orb's collider (about 3x larger than the orbs are visually) and ends either
+                when the teleportation successfully completes, or when the coroutine is aborted by the player breaking line of
+                sight with the collider.
+            </p>
+            <img src="img/[] - 10-17b.png"/>
+            <p class="caption">The teleportation coroutine.</p>
+            <img src="img/[] - 10-17c.png"/>
+            <p class="caption">This code is actually mostly derived from the "look to highlight" code I did in <a href="#Week10-12-2">Highlight Reel</a>.</p>
+            <p> 
+                This was mostly straightforward-- the few issues I ran into were silly mistakes with forgetting to assign values
+                to certain variables, and at one point accidentally assigning to a captured copy of an object rather than the
+                object itself. Once I got the system into a working state, I did make one key quality of life change: because
+                teleporting to an orb put you within that orb's collider (since, as I mentioned earlier, the collider of an orb is
+                significantly larger than the orb itself), it was somewhat difficult to get a lock on a second orb after teleporting
+                once. 
+            </p><p>  
+                As a player is unlikely to want to teleport to the orb that they just teleported to (since they're already
+                there), I solved this issue by making the teleport method a) capture the target orb's details after successfully
+                teleporting to an orb, then b) deactivate that orb until the next time a teleportation is successfully triggered.
+                This way, teleporting to an orb temporarily removes it from the game world, until you teleport away (restoring the
+                first orb and temporarily removing the second one). This elegantly removes the collider problem, and stops the
+                player from accidentally triggering mini-teleports while trying to look down.
+                </p>
+    </div>
+
+<div class="section" id="Week12Day1-2">
+    <h3>Model Work</h3><p class="label date">24/10/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+        
+    <p>Today we started on an exciting new push to get a playable game experience in preparation for a demo at a conference
+            at the town hall. This was also the first day I got to work with the new, actually kākā-adjacent model that my
+            design teammates were able to procure.
+        </p>
+        <img src="img/[] - 10-24b.png"/>
+        <p class="caption"></p>
+
+        <img src="img/[] - 10-24a.png"/>
+        <p class="caption">I also replaced the featureless white spheres with stylish Google-Maps-esque markers.</p>
+    <p> 
+            The model came prepackaged with a pretty decent finite state machine implementation to begin with. When I came to
+            the choice between sticking with my original one or switching to the one tied to the model, I decided to switch: the 
+            new finite state machine already had states for each of the kākā's animations, and usable parameters for
+            transitioning between these states. However, I stuck with the original base script for my birds, only updating the
+            core Update() method (which holds the logic behind state transitions) to make it work with the new finite state
+            machine's parameters and states (for example, the new finite state machine has only one Hop animation, and far
+            fewer "idle"-type animations).</p>
+</div>
+
+<div class="section" id="Week12Day2-2">
+    <h3>Behaving Like Birds</h3><p class="label date">25/10/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+        
+    <p>With the new model sorted, the time came to make the kākās' behaviour more believable. By just using the base
+        states, I could have kākā walk and fly in straight lines, and take off and land according to whatever parameter I
+        wanted: but a bunch of kākā that just proceed through a clearing in straight lines isn't very interesting, and it's
+        not very realistic.
+        
+    </p><p> 
+        The core issue here was getting the damn birds to rotate. Though I could set their rotation initially in the core
+        "bird" script, allowing them to spawn at random around the central clearing and still be oriented to cross through
+        it, trying to rotate them during the execution of a state proved to be completely impossible. Even calling a public
+        function (local to the main script) from inside the "walk" state had no effect.
+        
+    </p><p> 
+        After a <strong><em>lot</em></strong> of trial and error and fruitless experimentation, I finally took a step so
+        lateral that it solved everything: I moved the rotation code from the state's OnStateUpdate() method and put it
+        in the auto-generated OnStateMove() stub which according to a default comment always executes <em>after</em>
+        resolving the base Game Object's movement. In other words, the default implementation of this method was the true
+        source of my previous struggles: it had been overwriting all of my attempts to rotate my birds, for some reason
+        beyond my comprehension. By making it handle the rotation itself, I finally had my birds turning as they walked.
+        
+    </p><p> 
+        This did come with the minor problem of disabling the root motion on my bird models, but I fixed that easily enough
+        by adding appropriate forward movement to the OnStateMove() method too. If I ever wanted to make the birds vary
+        their walking speed dynamically this could present a problem, but for now this provides the expected behaviour at
+        no discernible cost.
+        </p>
+</div>
+
+<div class="section" id="Week13Day1-2">
+        <h3>Getting Some Bread</h3><p class="label date">28/10/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
+            
+        <p>Today I gave the player more ways to interact with the game. Since the core message we're trying to peddle here is
+that kākās are not pests and not pets, ways of "playing" with the kākā like you might play with a cat or a dog (e.g.
+throwing balls for them to play with) are problematic-- they put people in the mindset that kākās <em>are</em> pets.
+Because of this, I decided to restrict direct interaction with kākā to the mostly negative. Getting close to them
+causes them to fly off, and trying to lure them towards you with treats kills them-- kākā can't eat bread.
+</p>
+<img src="img/[] - 10-28a (kākā dead).png"/>
+<p class="caption">You did this, you monster.</p><p> 
+Getting the bread stuff to work without any obvious flaws was tough. Several times I ran into bugs with kākā looping
+in a single state indefinitely, because my controller was trying to make them transition into the walking state from
+a state that didn't already have a transition to the walking state-- the two main culprits for this were the Fly and 
+Eat states. Fixing these problems was relatively easy: I just had to add the required transitions to those two
+states.
+</p><p> 
+Another issue was kākā trying to pathfind to bread in midair-- I'd initially had kākā take a "snapshot" of all the
+bread in their immediate vicinity every second, saving the location of the closest one so it could lock on to it,
+but if they locked on to bread that had been in midair when they took the "snapshot" they would walk straight into
+the air to the spot the bread had occupied. I solved this issue in two ways. First, the kākā now save the closest
+bread object in its entirety, so that they can update their target position based on the bread's current position.
+Second, to avoid kākā trying to pathfind to bread currently in a person's hand, bread no longer exists on the
+"bread" layer until it is released.
+</p><p> 
+The other function I added was the ability to take screenshots. This was relatively easy to achieve, since Unity
+<a href="https://docs.unity3d.com/ScriptReference/ScreenCapture.CaptureScreenshot.html">has a function to
+do exactly that</a> baked into its scripting API. I added some neat features to make it more obvious that a
+picture was being taken, specifically a "flash" effect (just a white quad covering the camera that briefly shows
+up then vanishes) and a shutter sound effect.
+
+</p>
+</div>
+
+<div class="section" id="Week13Day2-2">
+        <h3>Twitter IRL</h3><p class="label date">29/10/2019</p><p class="label technical">Technical</p><a href="#">Back to top</a>
+            
+        <p>I added some more sound effects to make the game more immersive. These are authentic kākā noises, sourced from the
+<a href="https://www.youtube.com/watch?v=puq1ai_gg14">first actual footage of a kākā</a> I could find on YouTube.
+To get my kākā to play random sounds, I attached an array of sounds to the kākā game object and had the audio code
+randomly select an index in the array to play via the gameobject's AudioSource component.
+</p>
+
+<img src="img/[] - 10-29.png"/>
+<p class="caption">I also added a dying sound to the "die" method.</p><p>     
+I also got around to adding a small "tutorial" in the game world. These consist of a couple of floating signs
+depicting the Vive controller, which tell the player what each of the three buttons do-- one of the buttons is a
+toggle for these signs, allowing the player to hide them so that they don't block out the beautiful forest
+surroundings.</p>
+<img src="img/[] - 10-29a.png"/> 
+    
+<div class="imgrowwrapper">
+        <div class="imgrow">
+        <a href="img/instructions.png"><img src="img/instructions.png" /></a>
+        <a href="img/instructions2.png"><img src="img/instructions2.png" /></a>
+    </div>
+</div>
+
+<p>Finally, I added a tiny version of the bread model I was using directly to the kākā's right foot bone
+    (the foot it lifts to its mouth when it uses its "Eat" animation). By making this piece of bread active
+    when a kākā makes contact with a piece of bread and begins to "eat" it, I create the illusion that the
+    kākā has picked up a chunk of the bread and is lifting it to its mouth.
+</p>
+<img src="img/[] - 10-29c.png"/> 
+
+</div>
+
+<div class="section" id="Week14Day1-2">
+        <h3>Information Desk</h3><p class="label date">04/11/2019</p><p class="label design">Design</p><a href="#">Back to top</a>
+            
+        <p>I came away from the showcase last week feeling that the people I'd shown the game to were very bad at absorbing
+the information in my tutorial signs. Because of this, I decided to make the tutorial much less skippable: players
+now begin play in a black void, with nothing but helpful instructional signs for company. The only way to escape
+this void is to actually read the signs and press the buttons on the controllers in the manner they direct. I also
+took the opportunity to update the tutorial signs themselves, to make both the text more readable and to make it
+more obvious which buttons are being pointed at-- they now both have stylish highlighting around the indicated
+buttons, since otherwise it's easy to mistake the surface of the Vive as an entirely smooth black surface with no
+buttons at all.</p>
+
+<img src="img/[] - 11-04.png"/> 
+    
+<div class="imgrowwrapper">
+        <div class="imgrow three">
+        <a href="img/tutorial1.png"><img src="img/tutorial1.png" /></a>
+        <a href="img/tutorial2a.png"><img src="img/tutorial2a.png" /></a>
+        <a href="img/tutorial2b.png"><img src="img/tutorial2b.png" /></a>
+    </div>
+</div>
+<p class="caption">The final versions of the tutorial pictures.</p>
+</div>
+
+<div class="section" id="Week14Day2-2">
+        <h3>Quality Of Life</h3><p class="label date">07/11/2019</p><p class="label technical">Technical</p><p class="label design">Design</p><a href="#">Back to top</a>
+            
+<p>Today was mostly focused on fixing the minor, quibbling issues that made the game feel more buggy than it needed to.
+    Chief among these was fixing the behaviour of corpses: now, instead of just vanishing some time after a bird dies,
+    it fades out of existence with relative grace. This was achieved through judicious application of shaders-- in life,
+    each kākā uses the "Legacy/Transparent/Cutout/Bumped Diffuse" shader, and in death, they use the
+    "Unlit/UnlitAlphaWithFade" shader. I made this determination because although the Unlit shader allows me to fade
+    out the model's mesh render gracefully, its base state is also fairly transparent, and makes the kākā model look
+    really ugly and surreal (since you can see its legs through its back, which is not normally how kākā anatomy works).
+</p><p>   
+    The other major issue I fixed was to do with kākā pathfinding towards bread: basically, kākā were taking too long
+    to turn towards bread as they walked towards it, resulting in them tracing very large, unrealistic arcs in their
+    path towards the bread. By vastly increasing their turn rate (from 0.5 to 1.75), I was able to make them turn much
+    more realistically-- and this had the added bonus of letting me cut out a lot of the error-catching chaff I was
+    forced to implement when I had to compensate for a long, drawn-out turns, since now the kākā are almost guaranteed
+    to be turned towards their target when the time comes to consume it. This in turn made stuff like eating the bread
+    much less buggy-looking.</p>
+</div>
+
+<div class="section" id="Week15Day1-2">
+        <h3>Beta Showcase</h3><p class="label date">14/11/2019</p><p class="label professional">Professional</p><a href="#">Back to top</a>
+            
+        <p>Today we showed off the kākā game a little bit for the design students' official presentation of our full project.
+                We tried porting it over to their more portable Oculus initially: though it worked the day before, on the 13th,
+                something went badly wrong with everything on the day of the presentation, 30 minutes before it was due to start.
+                Fortunately, we were able to switch it out for the design school's Vive relatively quickly, and my own experience
+                with Vives saw it running perfectly with plenty of time to spare. Once the game did open, however, I noticed that
+                some of the coroutine-based features weren't working properly: the teleport circles seemed to vary quite wildly in
+                speed, and as far as I could tell my spawning code for the kākā wasn't running at all-- we were stuck with just the
+                initial set of three kākā.
+            </p><p>  
+                Overall, it was received relatively well, but wasn't the majestic showing I'd wanted it to be. Hopefully the true showcase goes better.</p>
+</div>
+</body>
+
+
+    <script>
+    let button1 = $('#Semester1Button');
+    let contents1 = $('#Semester1Contents');
+    contents1.hide()
+    let shown1 = false;
+    button1.click(() => {
+        (shown1) ? shown1 = false : shown1 = true;
+        (shown1) ? contents1.show() : contents1.hide();
+    });
+
+    let button2 = $('#Semester2Button');
+    let contents2 = $('#Semester2Contents');
+    contents2.hide()
+    let shown2 = false;
+    button2.click(() => {
+        (shown2) ? shown2 = false : shown2 = true;
+        (shown2) ? contents2.show() : contents2.hide();
+    });
+    </script>
 </html>

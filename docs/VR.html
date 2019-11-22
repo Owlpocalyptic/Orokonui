@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Documentation: Virtual Orokonui</title>
+</head>
+<div class="title">
+<a href="index.html"><h2>Orokonui Kākā Conservation 2019</h2>
+<h3>As recounted and reflected on by Nicholas Mulrooney</h3></a>
+</div>
+
+<body>
+    <div class="body">
+        <div class="section" id="Introduction">
+            <h2>Virutal Kākā Forest</h2>
+            <h4>Purpose</h4>
+            <p>The overarching goal of this project is to raise local interest and engagement in Orokonui Ecosanctuary's
+                kākā conservation efforts, and the survival of Otago's kākā enclave in general. To do so, this virtual reality
+                game seeks to provide an engaging experience to educate and inform Dunedin locals about these
+                quirky creatures.</p>
+        </div>
+        <div class="section" id="Development">
+            <h4>Development</h4>
+            <p>This game is written in C# via Unity, and is intended for use on Virtual Reality devices such as the HTC Vive. Once
+                again, it is recommended that developers learn how to use Unity first before working on this app, even if they are
+                intimately familiar with Unity: Unity features a developed API to assist in development and make coding more
+                streamlined and concise, so it can be hard to tell what's going on from a purely C# perspective. The developers of Unity
+                offer a number of <a href="https://learn.unity.com/tutorials">excellent tutorials</a> to this end: I recommend 
+                <a href="https://learn.unity.com/tutorial/introduction-to-roll-a-ball?projectId=5c51479fedbc2a001fd5bb9f">Roll A Ball</a>.
+
+                <div class="indented">
+                    <h4>The Core Controls</h4>
+                    <p>So far, there are three main controls that the player can use. These are bound to the scene's Controller objects (more on that below).
+                        Probably the most important control is Show/Hide UI: this allows the player to remove distracting UI elements, such as the game's Location
+                        Markers, so they can enjoy the beautiful kākā forest without them. Next is Snapshot, which lets the player save screenshots of the VR window
+                        from within the game, with just a touch of the VR controller buttons. Last is Bread: this lets the player generate a bread roll that they can
+                        feed the kākā with. Note that kākā are killed by eating bread.
+                    </p>
+                    <h4>Birb</h4>
+                    <p>The "Birb" prefab, found in the -Prefabs folder under Assets, is probably the single most crucial element of this
+                        whole endeavour. It represents the titular kākā themselves, and consists of both a physical model component and
+                        a logical script component. The script for Birbs is also called "Birb", but is a .cs file rather than a prefab.
+                    </p>
+                    <div class="indented">
+                        <p>Animator: The animator component of the Birb handles the model's animations, as you might expect. However, it <em>also</em>
+                        serves as the Birb's <strong>finite state machine</strong>, and details the conditions under which the Birb transitions between its states.
+                        This component contains a reference to the asset named "GreyParrot", located under "Prefabs/GreyParrot/" within the Assets pane. It is this
+                        that the Birb prefab actively uses as its FSM.</p>
+                        <p>Birb (Script): This script is the controller for the whole Birb prefab. It consists mainly of coroutines (time-delayed methods that run
+                        concurrently with each other until they're finished executing) that deal with the Birb's behaviour during the states defined by the Animator.
+                        The "backbone" of these coroutines is <code>slow()</code>, which runs every 1.4 to 2.0 seconds and mostly covers the transitions between
+                        states by modifying the parameters defined in the GreyParrot FSM based on programmatic stimuli.
+                        </p>
+                        <P>Audio Source: This component is required for the Birb prefab to play sounds. Sounds are played via the Birb script: this component is
+                        exposed in the script as <code>audioSrc</code>, and the two key methods for using this are <code>audioSrc.clip = AudioClip someAudioClip</code>
+                        (which sets the clip the Audio Source will be playing) and <code>audioSrc.Play()</code> (which plays the set clip once).
+                        </P>
+                    </div>
+
+                    <h4>GreyParrot</h4>
+                    <p>As stated before, the "GreyParrot" asset is an Animator object, and a finite state machine. It defines the states used in the Birb prefab and
+                        script, and the parameters they use to transition between those states. Often, bugs relating to repeating the same action continuously are
+                        because a required transition between two states was not added in this screen. To really get a handle on Unity's Animator interface, I would
+                        advise watching <a href="https://www.youtube.com/watch?v=NEvdyefORBo">this series of tutorials</a> on YouTube.
+                    <div class="indented">
+                        <p>State Behaviour: In the root Assets folder, there are a number of .cs files with names in the format "Bird_X", where X is an action like "Eat"
+                            or "Jump". These classes descend from the base class "BirbBaseFSM", and their purpose is to handle events that need to take place whenever a
+                            certain state is entered. In some of these classes, notably Bird_Walk and Bird_Jump, they run code every frame in order to make the bird move
+                            forward and vary their direction (this is in the <code>OnStateUpdate()</code> method, which is analogous to GameObject's <code>update()</code> method.)
+                            These scripts are attached directly to the corresponding states via GreyParrot. To see this in action, just open up GreyParrot and click on one of
+                            the state bubbles: states like <code>walk</code> and <code>eat</code> have such a script, while <code>fly</code> and <code>takeoff</code> lack them entirely.
+                            Generating such a script for a state without one is as easy as clicking the <code>Add Behaviour</code> button in the explorer.
+                        </p>
+                    </div>
+                    <h4>[Camera Rig]</h4>
+                    <p>Located in the scene itself, the camera rig is another crucial element of the project. This is the interface through which VR headsets like the
+                        Oculus and HTC Vive interact with the game world. I strongly advise trying your hand at <a href="https://www.raywenderlich.com/9189-htc-vive-tutorial-for-unity">this tutorial</a> in a fresh project before trying to do 
+                        anything that requires user interaction: understanding how the SteamVR asset package works is really important for
+                        trying to add any features that need input from the VR controllers to work.</p><p>
+
+                        Note: the tutorial above has one major mistake in it. Although it will tell you to delete the Pose option from the default Action Sets, this is
+                        wrong and may break the controller's input entirely: instead, use the Pose option as the Pose Action for both of the Controllers in the [Camera Rig]. 
+                        See <a href="https://forums.raywenderlich.com/t/htc-vive-tutorial-for-unity-raywenderlich-com/58993/29">here</a> for more detail.
+                    </p>
+                    <div class="indented">
+                        <p>Controller (Left) and Controller (Right): These are, as you might expect, the virtual versions of the two controllers that all VR headsets
+                            come with. SteamVR does a neat thing where it disconnects the keybindings on the controller (which will vary between difference VR devices and
+                            paradigms) from the implementation of the functions that will be bound to those keys. You attach the functions to these Controller objects--
+                            generally these will be identical to each other, but it is possible to make them different if you want the player to use their right hand for 
+                            some tasks and their left hand for others. The tutorial linked above goes into more detail on this.
+                        </p>
+                    </div>
+                    <h4>Teleport Points</h4>
+                    <p>These prefabs are simple enough: drag them into the scene and put them at any point to let the player teleport to that point. There's no additional
+                        overhead to this process. I will note that, as they are coded currently, birds will automatically spawn pathing towards a randomly selected teleport
+                        point that exists when the game first starts.
+                    </p>
+                </div>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
